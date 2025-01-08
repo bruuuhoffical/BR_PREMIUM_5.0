@@ -149,7 +149,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.label43 = new System.Windows.Forms.Label();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.camerakey = new Guna.UI2.WinForms.Guna2Button();
             this.label44 = new System.Windows.Forms.Label();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label45 = new System.Windows.Forms.Label();
@@ -160,9 +160,9 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label58 = new System.Windows.Forms.Label();
             this.loadspeed = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CustomCheckBox9 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.norecoil = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox8 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.bypassemulator = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label54 = new System.Windows.Forms.Label();
             this.loadcamera = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomCheckBox7 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
@@ -171,15 +171,15 @@
             this.guna2CustomCheckBox6 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label48 = new System.Windows.Forms.Label();
             this.loadwall = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CustomCheckBox1 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.fixfemale = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox2 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.camera = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox3 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.glitch = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label51 = new System.Windows.Forms.Label();
             this.guna2CustomCheckBox4 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.sniperscope = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.speedhack = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.sniperpan = new Guna.UI2.WinForms.Guna2Panel();
             this.label55 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -881,6 +881,7 @@
             this.aimbotspanel.ShadowDecoration.Color = System.Drawing.Color.Red;
             this.aimbotspanel.Size = new System.Drawing.Size(610, 436);
             this.aimbotspanel.TabIndex = 47;
+            this.aimbotspanel.Paint += new System.Windows.Forms.PaintEventHandler(this.aimbotspanel_Paint);
             // 
             // label1
             // 
@@ -1961,7 +1962,7 @@
             this.guna2Panel5.Controls.Add(this.label41);
             this.guna2Panel5.Controls.Add(this.guna2Button3);
             this.guna2Panel5.Controls.Add(this.label43);
-            this.guna2Panel5.Controls.Add(this.guna2Button4);
+            this.guna2Panel5.Controls.Add(this.camerakey);
             this.guna2Panel5.Controls.Add(this.label44);
             this.guna2Panel5.Controls.Add(this.guna2Button5);
             this.guna2Panel5.Controls.Add(this.label45);
@@ -2043,28 +2044,29 @@
             this.label43.ForeColor = System.Drawing.Color.Gray;
             this.label43.Location = new System.Drawing.Point(19, 144);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(138, 18);
+            this.label43.Size = new System.Drawing.Size(135, 18);
             this.label43.TabIndex = 57;
-            this.label43.Text = "Teleport Hack Key";
+            this.label43.Text = "Camera Right Key";
             this.label43.Click += new System.EventHandler(this.label43_Click);
             // 
-            // guna2Button4
+            // camerakey
             // 
-            this.guna2Button4.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button4.BorderRadius = 2;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button4.Location = new System.Drawing.Point(190, 144);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(60, 19);
-            this.guna2Button4.TabIndex = 59;
-            this.guna2Button4.Text = "None";
+            this.camerakey.BorderColor = System.Drawing.Color.Gray;
+            this.camerakey.BorderRadius = 2;
+            this.camerakey.BorderThickness = 1;
+            this.camerakey.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.camerakey.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.camerakey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.camerakey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.camerakey.FillColor = System.Drawing.Color.Transparent;
+            this.camerakey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camerakey.ForeColor = System.Drawing.Color.Gray;
+            this.camerakey.Location = new System.Drawing.Point(190, 144);
+            this.camerakey.Name = "camerakey";
+            this.camerakey.Size = new System.Drawing.Size(60, 19);
+            this.camerakey.TabIndex = 59;
+            this.camerakey.Text = "None";
+            this.camerakey.Click += new System.EventHandler(this.camerakey_Click);
             // 
             // label44
             // 
@@ -2178,9 +2180,9 @@
             this.guna2Panel6.BorderThickness = 2;
             this.guna2Panel6.Controls.Add(this.label58);
             this.guna2Panel6.Controls.Add(this.loadspeed);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox9);
+            this.guna2Panel6.Controls.Add(this.norecoil);
             this.guna2Panel6.Controls.Add(this.label57);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox8);
+            this.guna2Panel6.Controls.Add(this.bypassemulator);
             this.guna2Panel6.Controls.Add(this.label54);
             this.guna2Panel6.Controls.Add(this.loadcamera);
             this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox7);
@@ -2189,15 +2191,15 @@
             this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox6);
             this.guna2Panel6.Controls.Add(this.label48);
             this.guna2Panel6.Controls.Add(this.loadwall);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox1);
+            this.guna2Panel6.Controls.Add(this.fixfemale);
             this.guna2Panel6.Controls.Add(this.label49);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox2);
+            this.guna2Panel6.Controls.Add(this.camera);
             this.guna2Panel6.Controls.Add(this.label50);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox3);
+            this.guna2Panel6.Controls.Add(this.glitch);
             this.guna2Panel6.Controls.Add(this.label51);
             this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox4);
             this.guna2Panel6.Controls.Add(this.label52);
-            this.guna2Panel6.Controls.Add(this.sniperscope);
+            this.guna2Panel6.Controls.Add(this.speedhack);
             this.guna2Panel6.Location = new System.Drawing.Point(18, 27);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(288, 391);
@@ -2233,21 +2235,23 @@
             this.loadspeed.Size = new System.Drawing.Size(60, 19);
             this.loadspeed.TabIndex = 75;
             this.loadspeed.Text = "Load";
+            this.loadspeed.Click += new System.EventHandler(this.loadspeed_Click);
             // 
-            // guna2CustomCheckBox9
+            // norecoil
             // 
-            this.guna2CustomCheckBox9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox9.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox9.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox9.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox9.Location = new System.Drawing.Point(246, 177);
-            this.guna2CustomCheckBox9.Name = "guna2CustomCheckBox9";
-            this.guna2CustomCheckBox9.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox9.TabIndex = 74;
-            this.guna2CustomCheckBox9.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox9.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox9.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox9.UseTransparentBackground = true;
+            this.norecoil.BackColor = System.Drawing.Color.Transparent;
+            this.norecoil.CheckedState.BorderRadius = 2;
+            this.norecoil.CheckedState.BorderThickness = 0;
+            this.norecoil.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.norecoil.Location = new System.Drawing.Point(246, 177);
+            this.norecoil.Name = "norecoil";
+            this.norecoil.Size = new System.Drawing.Size(20, 20);
+            this.norecoil.TabIndex = 74;
+            this.norecoil.UncheckedState.BorderRadius = 2;
+            this.norecoil.UncheckedState.BorderThickness = 0;
+            this.norecoil.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.norecoil.UseTransparentBackground = true;
+            this.norecoil.Click += new System.EventHandler(this.guna2CustomCheckBox9_Click);
             // 
             // label57
             // 
@@ -2257,24 +2261,25 @@
             this.label57.ForeColor = System.Drawing.Color.Gray;
             this.label57.Location = new System.Drawing.Point(11, 332);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(134, 18);
+            this.label57.Size = new System.Drawing.Size(126, 18);
             this.label57.TabIndex = 70;
-            this.label57.Text = "Only Red Damage";
+            this.label57.Text = "Bypass Emulator";
             // 
-            // guna2CustomCheckBox8
+            // bypassemulator
             // 
-            this.guna2CustomCheckBox8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox8.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox8.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox8.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox8.Location = new System.Drawing.Point(246, 329);
-            this.guna2CustomCheckBox8.Name = "guna2CustomCheckBox8";
-            this.guna2CustomCheckBox8.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox8.TabIndex = 71;
-            this.guna2CustomCheckBox8.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox8.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox8.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox8.UseTransparentBackground = true;
+            this.bypassemulator.BackColor = System.Drawing.Color.Transparent;
+            this.bypassemulator.CheckedState.BorderRadius = 2;
+            this.bypassemulator.CheckedState.BorderThickness = 0;
+            this.bypassemulator.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bypassemulator.Location = new System.Drawing.Point(246, 329);
+            this.bypassemulator.Name = "bypassemulator";
+            this.bypassemulator.Size = new System.Drawing.Size(20, 20);
+            this.bypassemulator.TabIndex = 71;
+            this.bypassemulator.UncheckedState.BorderRadius = 2;
+            this.bypassemulator.UncheckedState.BorderThickness = 0;
+            this.bypassemulator.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bypassemulator.UseTransparentBackground = true;
+            this.bypassemulator.Click += new System.EventHandler(this.guna2CustomCheckBox8_Click);
             // 
             // label54
             // 
@@ -2305,6 +2310,7 @@
             this.loadcamera.Size = new System.Drawing.Size(60, 19);
             this.loadcamera.TabIndex = 69;
             this.loadcamera.Text = "Load";
+            this.loadcamera.Click += new System.EventHandler(this.loadcamera_Click);
             // 
             // guna2CustomCheckBox7
             // 
@@ -2350,6 +2356,7 @@
             this.loadglitch.Size = new System.Drawing.Size(60, 19);
             this.loadglitch.TabIndex = 66;
             this.loadglitch.Text = "Load";
+            this.loadglitch.Click += new System.EventHandler(this.loadglitch_Click);
             // 
             // guna2CustomCheckBox6
             // 
@@ -2374,9 +2381,9 @@
             this.label48.ForeColor = System.Drawing.Color.Gray;
             this.label48.Location = new System.Drawing.Point(11, 218);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(70, 18);
+            this.label48.Size = new System.Drawing.Size(145, 18);
             this.label48.TabIndex = 60;
-            this.label48.Text = "Fast Fire";
+            this.label48.Text = "Fix Female Damage";
             // 
             // loadwall
             // 
@@ -2396,20 +2403,21 @@
             this.loadwall.TabIndex = 62;
             this.loadwall.Text = "Load";
             // 
-            // guna2CustomCheckBox1
+            // fixfemale
             // 
-            this.guna2CustomCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox1.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox1.Location = new System.Drawing.Point(246, 215);
-            this.guna2CustomCheckBox1.Name = "guna2CustomCheckBox1";
-            this.guna2CustomCheckBox1.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox1.TabIndex = 61;
-            this.guna2CustomCheckBox1.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox1.UseTransparentBackground = true;
+            this.fixfemale.BackColor = System.Drawing.Color.Transparent;
+            this.fixfemale.CheckedState.BorderRadius = 2;
+            this.fixfemale.CheckedState.BorderThickness = 0;
+            this.fixfemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.fixfemale.Location = new System.Drawing.Point(246, 215);
+            this.fixfemale.Name = "fixfemale";
+            this.fixfemale.Size = new System.Drawing.Size(20, 20);
+            this.fixfemale.TabIndex = 61;
+            this.fixfemale.UncheckedState.BorderRadius = 2;
+            this.fixfemale.UncheckedState.BorderThickness = 0;
+            this.fixfemale.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fixfemale.UseTransparentBackground = true;
+            this.fixfemale.Click += new System.EventHandler(this.fixfemale_Click);
             // 
             // label49
             // 
@@ -2419,24 +2427,25 @@
             this.label49.ForeColor = System.Drawing.Color.Gray;
             this.label49.Location = new System.Drawing.Point(11, 142);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(86, 18);
+            this.label49.Size = new System.Drawing.Size(104, 18);
             this.label49.TabIndex = 57;
-            this.label49.Text = "Camera Up";
+            this.label49.Text = "Camera Right";
             // 
-            // guna2CustomCheckBox2
+            // camera
             // 
-            this.guna2CustomCheckBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox2.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox2.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox2.Location = new System.Drawing.Point(246, 139);
-            this.guna2CustomCheckBox2.Name = "guna2CustomCheckBox2";
-            this.guna2CustomCheckBox2.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox2.TabIndex = 58;
-            this.guna2CustomCheckBox2.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox2.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox2.UseTransparentBackground = true;
+            this.camera.BackColor = System.Drawing.Color.Transparent;
+            this.camera.CheckedState.BorderRadius = 2;
+            this.camera.CheckedState.BorderThickness = 0;
+            this.camera.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.camera.Location = new System.Drawing.Point(246, 139);
+            this.camera.Name = "camera";
+            this.camera.Size = new System.Drawing.Size(20, 20);
+            this.camera.TabIndex = 58;
+            this.camera.UncheckedState.BorderRadius = 2;
+            this.camera.UncheckedState.BorderThickness = 0;
+            this.camera.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.camera.UseTransparentBackground = true;
+            this.camera.Click += new System.EventHandler(this.guna2CustomCheckBox2_Click_1);
             // 
             // label50
             // 
@@ -2451,20 +2460,21 @@
             this.label50.Text = "Glitch Fire";
             this.label50.Click += new System.EventHandler(this.label50_Click);
             // 
-            // guna2CustomCheckBox3
+            // glitch
             // 
-            this.guna2CustomCheckBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox3.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox3.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox3.Location = new System.Drawing.Point(246, 101);
-            this.guna2CustomCheckBox3.Name = "guna2CustomCheckBox3";
-            this.guna2CustomCheckBox3.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox3.TabIndex = 55;
-            this.guna2CustomCheckBox3.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox3.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox3.UseTransparentBackground = true;
+            this.glitch.BackColor = System.Drawing.Color.Transparent;
+            this.glitch.CheckedState.BorderRadius = 2;
+            this.glitch.CheckedState.BorderThickness = 0;
+            this.glitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.glitch.Location = new System.Drawing.Point(246, 101);
+            this.glitch.Name = "glitch";
+            this.glitch.Size = new System.Drawing.Size(20, 20);
+            this.glitch.TabIndex = 55;
+            this.glitch.UncheckedState.BorderRadius = 2;
+            this.glitch.UncheckedState.BorderThickness = 0;
+            this.glitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.glitch.UseTransparentBackground = true;
+            this.glitch.Click += new System.EventHandler(this.guna2CustomCheckBox3_Click);
             // 
             // label51
             // 
@@ -2477,6 +2487,7 @@
             this.label51.Size = new System.Drawing.Size(75, 18);
             this.label51.TabIndex = 51;
             this.label51.Text = "Wall Hack";
+            this.label51.Click += new System.EventHandler(this.label51_Click);
             // 
             // guna2CustomCheckBox4
             // 
@@ -2505,21 +2516,21 @@
             this.label52.TabIndex = 48;
             this.label52.Text = "Speed Hack";
             // 
-            // sniperscope
+            // speedhack
             // 
-            this.sniperscope.BackColor = System.Drawing.Color.Transparent;
-            this.sniperscope.CheckedState.BorderRadius = 2;
-            this.sniperscope.CheckedState.BorderThickness = 0;
-            this.sniperscope.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.sniperscope.Location = new System.Drawing.Point(246, 25);
-            this.sniperscope.Name = "sniperscope";
-            this.sniperscope.Size = new System.Drawing.Size(20, 20);
-            this.sniperscope.TabIndex = 49;
-            this.sniperscope.UncheckedState.BorderRadius = 2;
-            this.sniperscope.UncheckedState.BorderThickness = 0;
-            this.sniperscope.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sniperscope.UseTransparentBackground = true;
-            this.sniperscope.Click += new System.EventHandler(this.sniperscope_Click);
+            this.speedhack.BackColor = System.Drawing.Color.Transparent;
+            this.speedhack.CheckedState.BorderRadius = 2;
+            this.speedhack.CheckedState.BorderThickness = 0;
+            this.speedhack.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.speedhack.Location = new System.Drawing.Point(246, 25);
+            this.speedhack.Name = "speedhack";
+            this.speedhack.Size = new System.Drawing.Size(20, 20);
+            this.speedhack.TabIndex = 49;
+            this.speedhack.UncheckedState.BorderRadius = 2;
+            this.speedhack.UncheckedState.BorderThickness = 0;
+            this.speedhack.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.speedhack.UseTransparentBackground = true;
+            this.speedhack.Click += new System.EventHandler(this.sniperscope_Click);
             // 
             // sniperpan
             // 
@@ -3500,12 +3511,12 @@
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.loginLogotext);
-            this.Controls.Add(this.aimbotspanel);
             this.Controls.Add(this.homepan);
             this.Controls.Add(this.settingspanel);
             this.Controls.Add(this.miscpanel);
             this.Controls.Add(this.visualspanel);
             this.Controls.Add(this.sniperpan);
+            this.Controls.Add(this.aimbotspanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3673,7 +3684,7 @@
         private System.Windows.Forms.Label label41;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Label label43;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button camerakey;
         private System.Windows.Forms.Label label44;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Label label45;
@@ -3684,15 +3695,15 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label48;
         private Guna.UI2.WinForms.Guna2Button loadwall;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox1;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox fixfemale;
         private System.Windows.Forms.Label label49;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox2;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox camera;
         private System.Windows.Forms.Label label50;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox3;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox glitch;
         private System.Windows.Forms.Label label51;
         private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox4;
         private System.Windows.Forms.Label label52;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox sniperscope;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox speedhack;
         private System.Windows.Forms.Label label54;
         private Guna.UI2.WinForms.Guna2Button loadcamera;
         private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox7;
@@ -3725,9 +3736,9 @@
         private Guna.UI2.WinForms.Guna2Button snipernav;
         private System.Windows.Forms.Label label58;
         private Guna.UI2.WinForms.Guna2Button loadspeed;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox9;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox norecoil;
         private System.Windows.Forms.Label label57;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox8;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox bypassemulator;
         private System.Windows.Forms.Label label59;
         private Guna.UI2.WinForms.Guna2Button m82boffkey;
         private System.Windows.Forms.Label label68;

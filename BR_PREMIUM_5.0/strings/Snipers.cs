@@ -217,8 +217,8 @@ namespace BR_PREMIUM_5._0.strings
         #region SS
         public async void EnableSniperSwitch()
         {
-            string search = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00";
-            string replace = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 2B 00 00 80 2B 00 00 00 00 04 00 00 00 00 00 80 3F 00";
+            string search = "3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F ?? ?? ?? 3F ?? ?? ?? 3F 00 00 80 3F 00 00 00 00 ?? ?? ?? 3F 00 00 80 3F 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00";
+            string replace = "3F 00 00 80 3E EC 51 B8 3D";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -254,8 +254,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableSniperSwitch()
         {
-            string search = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 2B 00 00 80 2B 00 00 00 00 04 00 00 00 00 00 80 3F 00";
-            string replace = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00";
+            string search = "3F 00 00 80 3E EC 51 B8 3D";
+            string replace = "3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F ?? ?? ?? 3F ?? ?? ?? 3F 00 00 80 3F 00 00 00 00 ?? ?? ?? 3F 00 00 80 3F 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using BR_PREMIUM.strings;
 using BR_PREMIUM_5._0.strings;
 using CheatHubMem;
 using DiscordRPC;
@@ -46,7 +47,10 @@ namespace BR_PREMIUM_5._0
         private Visuals visuals;
         private Aimbots aimbots;
         private Miscs miscs;
+        private Bypass bypass;
         //private Aimbots aimbotss = new Aimbots();
+
+        bool cameraRight = false;
         public HOME()
         {
             InitializeComponent();
@@ -67,6 +71,8 @@ namespace BR_PREMIUM_5._0
             sniper = new Snipers(this);
             visuals = new Visuals(this);
             aimbots = new Aimbots(this);
+            miscs = new Miscs(this);
+            bypass = new Bypass(this);
 
         }
         #region Particles
@@ -157,6 +163,11 @@ namespace BR_PREMIUM_5._0
             m82boffkey.Text = "?";
             this.KeyDown += Form1_KeyDownButton9;
         }
+        private void capture10()
+        {
+            camerakey.Text = "?";
+            this.KeyDown += Form1_KeyDownButton10;
+        }
 
         private void Form1_KeyDownButton1(object sender, KeyEventArgs e)
         {
@@ -202,6 +213,11 @@ namespace BR_PREMIUM_5._0
         {
             RegisterHotKeyForButton(m82boffkey, e.KeyCode, e.Control, e.Alt, e.Shift);
             this.KeyDown -= Form1_KeyDownButton9;
+        }
+        private void Form1_KeyDownButton10(object sender, KeyEventArgs e)
+        {
+            RegisterHotKeyForButton(camerakey, e.KeyCode, e.Control, e.Alt, e.Shift);
+            this.KeyDown -= Form1_KeyDownButton10;
         }
 
         //private void Form1_KeyDownButton2(object sender, KeyEventArgs e)
@@ -261,36 +277,24 @@ namespace BR_PREMIUM_5._0
         {
             if (button == aimheadkey)
             {
-                if (aimbots.onaimheadv1 == false)
-                {
-                    aimbots.EnableAimbotHeadV1();
-                }
-                else if (aimbots.onaimheadv1 == true)
-                {
-                    aimbots.DisableAimbotHeadV1();
-                }
+                aimbots.EnableAimbotSecurity();
             }
             else if (button == aimheadv2key)
             {
-                if (aimbots.onaimheadv2 == false)
-                {
-                    aimbots.EnableAimbotHeadV2();
-                }
-                else if (aimbots.onaimheadv2 == true)
-                {
-                    aimbots.DisableAimbotHeadV2();
-                }
+                aimbots.LoadAimbotHeadV1();
+                aimbots.LoadAimbotExtra();
             }
             else if (button == aimdragkey)
             {
-                if (aimbots.onaimdrag == false)
-                {
-                    aimbots.EnableAimbotDrag();
-                }
-                else if (aimbots.onaimdrag == true)
-                {
-                    aimbots.DisableAimbotDrag();
-                }
+                //if (aimbots.onaimdrag == false)
+                //{
+                //    aimbots.EnableAimbotDrag();
+                //}
+                //else if (aimbots.onaimdrag == true)
+                //{
+                //    aimbots.DisableAimbotDrag();
+                //}
+
             }
             else if (button == aimneckkey)
             {
@@ -329,6 +333,17 @@ namespace BR_PREMIUM_5._0
             else if (button == m82boffkey)
             {
                 
+            }
+            else if (button == camerakey)
+            {
+                if(cameraRight == false)
+                {
+                    miscs.EnableCameraRight();
+                }
+                else
+                {
+                    miscs.ResetCameraRight();
+                }
             }
 
         }
@@ -478,8 +493,9 @@ namespace BR_PREMIUM_5._0
         }
         private void HOME_Load(object sender, EventArgs e)
         {
-            homenav.PerformClick();
             rambar.Update();
+            homenav.PerformClick();
+            LoadSettings();
             //rpc.Checked = true;
             RichStatus.rpctimestamp = Timestamps.Now;
             RichStatus.InitializeRPC();
@@ -623,7 +639,14 @@ namespace BR_PREMIUM_5._0
 
         private void guna2CustomCheckBox2_Click(object sender, EventArgs e)
         {
-            
+            if (camera.Checked)
+            {
+                aimbots.EnableAimbotDrag();
+            }
+            else
+            {
+                aimbots.DisableAimbotDrag();
+            }
         }
 
         private void testkey_Click(object sender, EventArgs e)
@@ -634,7 +657,8 @@ namespace BR_PREMIUM_5._0
         {
             if (aimexv2.Checked)
             {
-                //aimbots.EnableAimbot();
+                aimbots.EnableAimbotHeadV1();
+                aimbots.EnableAimbotHeadExtra();
             }
         }
         private void visualsnav_Click(object sender, EventArgs e)
@@ -1138,13 +1162,13 @@ namespace BR_PREMIUM_5._0
         {
             if (aimbotexternal.Checked)
             {
-                aimbots.EnableAimbotHeadV1();
+                aimbots.AimbotOn();
             }
 
             else
             {
-                aimbots.DisableAimbotHeadV1();
-
+                //aimbots.DisableAimbotHeadV1();
+                aimbots.AimbotOff();
                 
 
             }
@@ -1203,7 +1227,7 @@ namespace BR_PREMIUM_5._0
         public static String PID;
         private async void aimheadload_Click(object sender, EventArgs e)
         {
-            aimbots.LoadAimbotHeadV1();
+            aimbots.EnableAimbotSecurity();
         }
 
         private void sniperpan_Paint(object sender, PaintEventArgs e)
@@ -1224,16 +1248,18 @@ namespace BR_PREMIUM_5._0
         private async void aimheadv2load_Click(object sender, EventArgs e)
         {
             //aimbots.LoadAimbot();
+            aimbots.LoadAimbotHeadV1();
+            aimbots.LoadAimbotExtra();
         }
 
         private async void aimdragload_Click(object sender, EventArgs e)
         {
-            
+            aimbots.LoadAimbotDrag();
         }
 
         private async void aimneckload_Click(object sender, EventArgs e)
         {
-            
+            aimbots.LoadAimbotNeck();
         }
 
         private void aimbodyload_Click(object sender, EventArgs e)
@@ -1243,7 +1269,14 @@ namespace BR_PREMIUM_5._0
 
         private void ainneck_Click(object sender, EventArgs e)
         {
-            
+            if (ainneck.Checked)
+            {
+                aimbots.EnableAimbotNeck();
+            }
+            else
+            {
+                aimbots.DisableAimbotNeck();
+            }
         }
 
         private void ssc_Click(object sender, EventArgs e)
@@ -1288,7 +1321,14 @@ namespace BR_PREMIUM_5._0
 
         private void sniperscope_Click(object sender, EventArgs e)
         {
-
+            if (speedhack.Checked)
+            {
+                miscs.EnableSpeedHck();
+            }
+            else
+            {
+                miscs.ResetSpeedHack();
+            }
         }
 
         private void guna2Panel7_Paint(object sender, PaintEventArgs e)
@@ -1508,6 +1548,92 @@ namespace BR_PREMIUM_5._0
             {
                 aimbots.DisableAimFov();
             }
+        }
+
+        private void aimbotspanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CustomCheckBox9_Click(object sender, EventArgs e)
+        {
+            if (norecoil.Checked)
+            {
+                miscs.EnableNoRecoil();
+            }
+            else
+            {
+                miscs.DisableNoRecoil();    
+            }
+        }
+
+        private void loadspeed_Click(object sender, EventArgs e)
+        {
+            miscs.ScanSpeedHack();
+        }
+
+        private void label51_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadglitch_Click(object sender, EventArgs e)
+        {
+            miscs.ScanGlitchFire();
+        }
+
+        private void guna2CustomCheckBox3_Click(object sender, EventArgs e)
+        {
+            if (glitch.Checked)
+            {
+                miscs.EnableGlitchFire();
+            }
+            else
+            {
+                miscs.ResetGlitchFire();
+            }
+        }
+
+        private void guna2CustomCheckBox8_Click(object sender, EventArgs e)
+        {
+            if (bypassemulator.Checked)
+            {
+                bypass.EnableSecureBypass();
+            }
+        }
+
+        private void guna2CustomCheckBox2_Click_1(object sender, EventArgs e)
+        {
+            if (camera.Checked)
+            {
+                miscs.EnableCameraRight();
+            }
+            else
+            {
+                miscs.ResetCameraRight();
+            }
+        }
+
+        private void fixfemale_Click(object sender, EventArgs e)
+        {
+            if (fixfemale.Checked)
+            {
+                miscs.EnableFixFemale();
+            }
+            else
+            {
+                miscs.DisableFixFemale();
+            }
+        }
+
+        private void loadcamera_Click(object sender, EventArgs e)
+        {
+            miscs.ScanCameraRight();
+        }
+
+        private void camerakey_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
