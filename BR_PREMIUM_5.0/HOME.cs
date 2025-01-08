@@ -1598,7 +1598,7 @@ namespace BR_PREMIUM_5._0
         {
             if (bypassemulator.Checked)
             {
-                bypass.EnableSecureBypass();
+                bypass.ScanSecureBypass();
             }
         }
 

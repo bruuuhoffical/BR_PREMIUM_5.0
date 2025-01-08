@@ -123,7 +123,7 @@ namespace BR_PREMIUM.strings
             }
 
             bruuuh.OpenProcess("HD-Player");
-
+            ShowMessageBox("Please Wait...", "failed", "");
             List<long> allFoundAddresses = new List<long>();
 
             foreach (var searchPattern in searchPatterns)
@@ -161,6 +161,7 @@ namespace BR_PREMIUM.strings
             if (SecureBypass.Count > 0)
             {
                 bool success = false;
+                ShowMessageBox("Step 2, Wait...", "failed", "");
 
                 foreach (var address in SecureBypass)
                 {
