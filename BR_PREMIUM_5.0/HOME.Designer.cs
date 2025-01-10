@@ -153,9 +153,9 @@
             this.label44 = new System.Windows.Forms.Label();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label45 = new System.Windows.Forms.Label();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.WallKey = new Guna.UI2.WinForms.Guna2Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.speedKey = new Guna.UI2.WinForms.Guna2Button();
             this.label47 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label58 = new System.Windows.Forms.Label();
@@ -177,7 +177,7 @@
             this.label50 = new System.Windows.Forms.Label();
             this.glitch = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.guna2CustomCheckBox4 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.wallhack = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label52 = new System.Windows.Forms.Label();
             this.speedhack = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.sniperpan = new Guna.UI2.WinForms.Guna2Panel();
@@ -1966,9 +1966,9 @@
             this.guna2Panel5.Controls.Add(this.label44);
             this.guna2Panel5.Controls.Add(this.guna2Button5);
             this.guna2Panel5.Controls.Add(this.label45);
-            this.guna2Panel5.Controls.Add(this.guna2Button6);
+            this.guna2Panel5.Controls.Add(this.WallKey);
             this.guna2Panel5.Controls.Add(this.label46);
-            this.guna2Panel5.Controls.Add(this.guna2Button7);
+            this.guna2Panel5.Controls.Add(this.speedKey);
             this.guna2Panel5.Location = new System.Drawing.Point(315, 27);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(278, 257);
@@ -2004,6 +2004,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(60, 19);
             this.guna2Button2.TabIndex = 64;
             this.guna2Button2.Text = "Reset";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // label41
             // 
@@ -2098,6 +2099,7 @@
             this.guna2Button5.Size = new System.Drawing.Size(60, 19);
             this.guna2Button5.TabIndex = 56;
             this.guna2Button5.Text = "None";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // label45
             // 
@@ -2107,28 +2109,28 @@
             this.label45.ForeColor = System.Drawing.Color.Gray;
             this.label45.Location = new System.Drawing.Point(19, 62);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(124, 18);
+            this.label45.Size = new System.Drawing.Size(106, 18);
             this.label45.TabIndex = 51;
-            this.label45.Text = "Speed Hack Key";
+            this.label45.Text = "Wall Hack Key";
             this.label45.Click += new System.EventHandler(this.label45_Click);
             // 
-            // guna2Button6
+            // WallKey
             // 
-            this.guna2Button6.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button6.BorderRadius = 2;
-            this.guna2Button6.BorderThickness = 1;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button6.Location = new System.Drawing.Point(190, 62);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(60, 19);
-            this.guna2Button6.TabIndex = 53;
-            this.guna2Button6.Text = "None";
+            this.WallKey.BorderColor = System.Drawing.Color.Gray;
+            this.WallKey.BorderRadius = 2;
+            this.WallKey.BorderThickness = 1;
+            this.WallKey.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.WallKey.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.WallKey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.WallKey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.WallKey.FillColor = System.Drawing.Color.Transparent;
+            this.WallKey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WallKey.ForeColor = System.Drawing.Color.Gray;
+            this.WallKey.Location = new System.Drawing.Point(190, 62);
+            this.WallKey.Name = "WallKey";
+            this.WallKey.Size = new System.Drawing.Size(60, 19);
+            this.WallKey.TabIndex = 53;
+            this.WallKey.Text = "None";
             // 
             // label46
             // 
@@ -2138,28 +2140,28 @@
             this.label46.ForeColor = System.Drawing.Color.Gray;
             this.label46.Location = new System.Drawing.Point(19, 21);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(106, 18);
+            this.label46.Size = new System.Drawing.Size(124, 18);
             this.label46.TabIndex = 48;
-            this.label46.Text = "Wall Hack Key";
+            this.label46.Text = "Speed Hack Key";
             this.label46.Click += new System.EventHandler(this.label46_Click);
             // 
-            // guna2Button7
+            // speedKey
             // 
-            this.guna2Button7.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button7.BorderRadius = 2;
-            this.guna2Button7.BorderThickness = 1;
-            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button7.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button7.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button7.Location = new System.Drawing.Point(190, 21);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(60, 19);
-            this.guna2Button7.TabIndex = 50;
-            this.guna2Button7.Text = "None";
+            this.speedKey.BorderColor = System.Drawing.Color.Gray;
+            this.speedKey.BorderRadius = 2;
+            this.speedKey.BorderThickness = 1;
+            this.speedKey.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.speedKey.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.speedKey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.speedKey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.speedKey.FillColor = System.Drawing.Color.Transparent;
+            this.speedKey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.speedKey.ForeColor = System.Drawing.Color.Gray;
+            this.speedKey.Location = new System.Drawing.Point(190, 21);
+            this.speedKey.Name = "speedKey";
+            this.speedKey.Size = new System.Drawing.Size(60, 19);
+            this.speedKey.TabIndex = 50;
+            this.speedKey.Text = "None";
             // 
             // label47
             // 
@@ -2197,7 +2199,7 @@
             this.guna2Panel6.Controls.Add(this.label50);
             this.guna2Panel6.Controls.Add(this.glitch);
             this.guna2Panel6.Controls.Add(this.label51);
-            this.guna2Panel6.Controls.Add(this.guna2CustomCheckBox4);
+            this.guna2Panel6.Controls.Add(this.wallhack);
             this.guna2Panel6.Controls.Add(this.label52);
             this.guna2Panel6.Controls.Add(this.speedhack);
             this.guna2Panel6.Location = new System.Drawing.Point(18, 27);
@@ -2402,6 +2404,7 @@
             this.loadwall.Size = new System.Drawing.Size(60, 19);
             this.loadwall.TabIndex = 62;
             this.loadwall.Text = "Load";
+            this.loadwall.Click += new System.EventHandler(this.loadwall_Click);
             // 
             // fixfemale
             // 
@@ -2484,25 +2487,26 @@
             this.label51.ForeColor = System.Drawing.Color.Gray;
             this.label51.Location = new System.Drawing.Point(11, 66);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(75, 18);
+            this.label51.Size = new System.Drawing.Size(96, 18);
             this.label51.TabIndex = 51;
-            this.label51.Text = "Wall Hack";
+            this.label51.Text = "Wall Hack V2";
             this.label51.Click += new System.EventHandler(this.label51_Click);
             // 
-            // guna2CustomCheckBox4
+            // wallhack
             // 
-            this.guna2CustomCheckBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomCheckBox4.CheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox4.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2CustomCheckBox4.Location = new System.Drawing.Point(246, 63);
-            this.guna2CustomCheckBox4.Name = "guna2CustomCheckBox4";
-            this.guna2CustomCheckBox4.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomCheckBox4.TabIndex = 52;
-            this.guna2CustomCheckBox4.UncheckedState.BorderRadius = 2;
-            this.guna2CustomCheckBox4.UncheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2CustomCheckBox4.UseTransparentBackground = true;
+            this.wallhack.BackColor = System.Drawing.Color.Transparent;
+            this.wallhack.CheckedState.BorderRadius = 2;
+            this.wallhack.CheckedState.BorderThickness = 0;
+            this.wallhack.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.wallhack.Location = new System.Drawing.Point(246, 63);
+            this.wallhack.Name = "wallhack";
+            this.wallhack.Size = new System.Drawing.Size(20, 20);
+            this.wallhack.TabIndex = 52;
+            this.wallhack.UncheckedState.BorderRadius = 2;
+            this.wallhack.UncheckedState.BorderThickness = 0;
+            this.wallhack.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.wallhack.UseTransparentBackground = true;
+            this.wallhack.Click += new System.EventHandler(this.guna2CustomCheckBox4_Click);
             // 
             // label52
             // 
@@ -3511,12 +3515,12 @@
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.loginLogotext);
-            this.Controls.Add(this.homepan);
-            this.Controls.Add(this.settingspanel);
             this.Controls.Add(this.miscpanel);
             this.Controls.Add(this.visualspanel);
             this.Controls.Add(this.sniperpan);
             this.Controls.Add(this.aimbotspanel);
+            this.Controls.Add(this.homepan);
+            this.Controls.Add(this.settingspanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3688,9 +3692,9 @@
         private System.Windows.Forms.Label label44;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Label label45;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button WallKey;
         private System.Windows.Forms.Label label46;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button speedKey;
         private System.Windows.Forms.Label label47;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label48;
@@ -3701,7 +3705,7 @@
         private System.Windows.Forms.Label label50;
         private Guna.UI2.WinForms.Guna2CustomCheckBox glitch;
         private System.Windows.Forms.Label label51;
-        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox4;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox wallhack;
         private System.Windows.Forms.Label label52;
         private Guna.UI2.WinForms.Guna2CustomCheckBox speedhack;
         private System.Windows.Forms.Label label54;

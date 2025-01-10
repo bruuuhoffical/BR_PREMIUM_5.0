@@ -27,11 +27,15 @@ namespace BR_PREMIUM_5._0.strings
         private List<long> CameraUpAddress = new List<long>();
         private List<long> SpeedAddress = new List<long>();
         private List<long> GlitchAddress = new List<long>();
+        private List<long> WallAddress = new List<long>();
         public Miscs(HOME mainForm)
         {
             _mainForm = mainForm;
 
         }
+        public bool Speed = false;
+        public bool Wall = false;
+        public bool Glitch = false;
 
         #region NoRecoil
         public async void EnableNoRecoil()
@@ -567,149 +571,149 @@ namespace BR_PREMIUM_5._0.strings
         #endregion
         
         
-        #region SpeedHack
+        //#region SpeedHack
 
-        public async Task ScanSpeedHack()
-        {
-            string search = "01 00 00 00 02 2b 07 3d";
+        //public async Task ScanSpeedHack()
+        //{
+        //    string search = "01 00 00 00 02 2b 07 3d";
 
-            if (Process.GetProcessesByName("HD-Player").Length == 0)
-            {
-                ShowMessageBox("Open Emulator", "failed", "");
-                return;
-            }
+        //    if (Process.GetProcessesByName("HD-Player").Length == 0)
+        //    {
+        //        ShowMessageBox("Open Emulator", "failed", "");
+        //        return;
+        //    }
 
-            bruuuh.OpenProcess("HD-Player");
-            ShowMessageBox("Scanning...", "activating", "");
+        //    bruuuh.OpenProcess("HD-Player");
+        //    ShowMessageBox("Scanning...", "activating", "");
 
-            IEnumerable<long> foundAddresses = await bruuuh.AoBScan(search, writable: true);
+        //    IEnumerable<long> foundAddresses = await bruuuh.AoBScan(search, writable: true);
 
-            if (foundAddresses.Count() > 0)
-            {
-                SpeedAddress = foundAddresses.ToList();
-                ShowMessageBox("Scan Success", "", "");
-            }
-            else
-            {
-                if (_mainForm.IsCheckboxChecked())
-                {
+        //    if (foundAddresses.Count() > 0)
+        //    {
+        //        SpeedAddress = foundAddresses.ToList();
+        //        ShowMessageBox("Scan Success", "", "");
+        //    }
+        //    else
+        //    {
+        //        if (_mainForm.IsCheckboxChecked())
+        //        {
 
-                }
-                else
-                {
-                    ShowMessageBox("Scan Failed", "Memory pattern not found", "");
-                }
-            }
-        }
+        //        }
+        //        else
+        //        {
+        //            ShowMessageBox("Scan Failed", "Memory pattern not found", "");
+        //        }
+        //    }
+        //}
 
-        public void EnableSpeedHck()
-        {
-            string replace = "01 00 00 00 FF FF 84 3D";
+        //public void EnableSpeedHck()
+        //{
+        //    string replace = "01 00 00 00 FF FF 84 3D";
 
-            if (SpeedAddress.Count > 0)
-            {
-                bool success = false;
+        //    if (SpeedAddress.Count > 0)
+        //    {
+        //        bool success = false;
 
-                foreach (var address in SpeedAddress)
-                {
-                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
-                    if (writeResult)
-                    {
-                        success = true;
-                    }
-                }
+        //        foreach (var address in SpeedAddress)
+        //        {
+        //            bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
+        //            if (writeResult)
+        //            {
+        //                success = true;
+        //            }
+        //        }
 
-                if (success)
-                {
-                    if (_mainForm.IsCheckboxChecked())
-                    {
+        //        if (success)
+        //        {
+        //            if (_mainForm.IsCheckboxChecked())
+        //            {
 
-                    }
-                    else
-                    {
-                        ShowMessageBox("SPH Location Enabled", "", "");
-                    }
-                }
-                else
-                {
-                    if (_mainForm.IsCheckboxChecked())
-                    {
+        //            }
+        //            else
+        //            {
+        //                ShowMessageBox("SPH Location Enabled", "", "");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (_mainForm.IsCheckboxChecked())
+        //            {
 
-                    }
-                    else
-                    {
-                        ShowMessageBox("SPH Error", "failed", "");
-                    }
-                }
-            }
-            else
-            {
-                if (_mainForm.IsCheckboxChecked())
-                {
+        //            }
+        //            else
+        //            {
+        //                ShowMessageBox("SPH Error", "failed", "");
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (_mainForm.IsCheckboxChecked())
+        //        {
 
-                }
-                else
-                {
-                    ShowMessageBox("Please Load First !", "failed", "");
-                }
-            }
-        }
-        public void ResetSpeedHack()
-        {
-            string originalPattern = "01 00 00 00 02 2b 07 3d";
+        //        }
+        //        else
+        //        {
+        //            ShowMessageBox("Please Load First !", "failed", "");
+        //        }
+        //    }
+        //}
+        //public void ResetSpeedHack()
+        //{
+        //    string originalPattern = "01 00 00 00 02 2b 07 3d";
 
-            if (SpeedAddress.Count > 0)
-            {
-                bool success = false;
+        //    if (SpeedAddress.Count > 0)
+        //    {
+        //        bool success = false;
 
-                foreach (var address in SpeedAddress)
-                {
-                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
-                    if (writeResult)
-                    {
-                        success = true;
-                    }
-                }
+        //        foreach (var address in SpeedAddress)
+        //        {
+        //            bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
+        //            if (writeResult)
+        //            {
+        //                success = true;
+        //            }
+        //        }
 
-                if (success)
-                {
-                    if (_mainForm.IsCheckboxChecked())
-                    {
+        //        if (success)
+        //        {
+        //            if (_mainForm.IsCheckboxChecked())
+        //            {
 
-                    }
-                    else
-                    {
+        //            }
+        //            else
+        //            {
 
-                        ShowMessageBox("SPH Location Disabled", "", "");
-                    }
-                }
-                else
-                {
-                    if (_mainForm.IsCheckboxChecked())
-                    {
+        //                ShowMessageBox("SPH Location Disabled", "", "");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            if (_mainForm.IsCheckboxChecked())
+        //            {
 
-                    }
-                    else
-                    {
+        //            }
+        //            else
+        //            {
 
-                        ShowMessageBox("SPH Error 101", "failed", "");
-                    }
-                }
-            }
-            else
-            {
-                if (_mainForm.IsCheckboxChecked())
-                {
+        //                ShowMessageBox("SPH Error 101", "failed", "");
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (_mainForm.IsCheckboxChecked())
+        //        {
 
-                }
-                else
-                {
+        //        }
+        //        else
+        //        {
 
-                    ShowMessageBox("Please Load First !", "failed", "");
-                }
-            }
-        }
-        #endregion
+        //            ShowMessageBox("Please Load First !", "failed", "");
+        //        }
+        //    }
+        //}
+        //#endregion
         
         
         
@@ -736,6 +740,7 @@ namespace BR_PREMIUM_5._0.strings
             {
                 GlitchAddress = foundAddresses.ToList();
                 ShowMessageBox("Scan Success", "", "");
+                Glitch = false;
             }
             else
             {
@@ -776,6 +781,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
                         ShowMessageBox("GLT Location Enabled", "", "");
+                        Glitch = true;
                     }
                 }
                 else
@@ -787,6 +793,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
                         ShowMessageBox("GLT Error", "failed", "");
+                        Glitch = false;
                     }
                 }
             }
@@ -829,6 +836,7 @@ namespace BR_PREMIUM_5._0.strings
                     {
 
                         ShowMessageBox("GLT Location Disabled", "", "");
+                        Glitch = false;
                     }
                 }
                 else
@@ -841,6 +849,307 @@ namespace BR_PREMIUM_5._0.strings
                     {
 
                         ShowMessageBox("GLT Error 101", "failed", "");
+                        Glitch = true;
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        #endregion
+        
+        
+        #region SpeedHack
+
+        public async Task ScanSpeed()
+        {
+            string search = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 300x3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30";
+
+            if (Process.GetProcessesByName("HD-Player").Length == 0)
+            {
+                ShowMessageBox("Open Emulator", "failed", "");
+                return;
+            }
+
+            bruuuh.OpenProcess("HD-Player");
+            ShowMessageBox("Scanning...", "activating", "");
+
+            IEnumerable<long> foundAddresses = await bruuuh.AoBScan(search, writable: true);
+
+            if (foundAddresses.Count() > 0)
+            {
+                SpeedAddress = foundAddresses.ToList();
+                ShowMessageBox("Scan Success", "", "");
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Scan Failed", "Memory pattern not found", "");
+                    Speed = false;
+                }
+            }
+        }
+
+        public void EnablSpeed()
+        {
+            string replace = "BF";
+
+            if (SpeedAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in SpeedAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("SP Location Enabled", "", "");
+                        Speed = true;
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("SP Error", "failed", "");
+                        Speed = false;
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        public void ResetSpeed()
+        {
+            string originalPattern = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 300x3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30";
+
+            if (SpeedAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in SpeedAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("SP Location Disabled", "", "");
+                        Speed = false;
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("SP Error 101", "failed", "");
+                        Speed = true;
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        #endregion
+        
+        
+        #region WallHack
+
+        public async Task ScanWall()
+        {
+            string search = "01 00 00 00 02 2B 07 3D";
+
+            if (Process.GetProcessesByName("HD-Player").Length == 0)
+            {
+                ShowMessageBox("Open Emulator", "failed", "");
+                return;
+            }
+
+            bruuuh.OpenProcess("HD-Player");
+            ShowMessageBox("Scanning...", "activating", "");
+
+            IEnumerable<long> foundAddresses = await bruuuh.AoBScan(search, writable: true);
+
+            if (foundAddresses.Count() > 0)
+            {
+                WallAddress = foundAddresses.ToList();
+                ShowMessageBox("Scan Success", "", "");
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Scan Failed", "Memory pattern not found", "");
+                    Wall = false;
+                }
+            }
+        }
+
+        public void EnablWall()
+        {
+            string replace = "01 00 00 00 02 2B 70 3D";
+
+            if (WallAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in WallAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("WH Location Enabled", "", "");
+                        Wall = true;
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("WH Error", "failed", "");
+                        Wall = false;
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        public void ResetWall()
+        {
+            string originalPattern = "01 00 00 00 02 2B 07 3D";
+
+            if (WallAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in WallAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("WH Location Disabled", "", "");
+                        Wall = false;
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("WH Error 101", "failed", "");
+                        Wall = true;
                     }
                 }
             }

@@ -168,6 +168,16 @@ namespace BR_PREMIUM_5._0
             camerakey.Text = "?";
             this.KeyDown += Form1_KeyDownButton10;
         }
+        private void capture11()
+        {
+            speedKey.Text = "?";
+            this.KeyDown += Form1_KeyDownButton11;
+        }
+        private void capture12()
+        {
+            WallKey.Text = "?";
+            this.KeyDown += Form1_KeyDownButton12;
+        }
 
         private void Form1_KeyDownButton1(object sender, KeyEventArgs e)
         {
@@ -218,6 +228,16 @@ namespace BR_PREMIUM_5._0
         {
             RegisterHotKeyForButton(camerakey, e.KeyCode, e.Control, e.Alt, e.Shift);
             this.KeyDown -= Form1_KeyDownButton10;
+        }
+        private void Form1_KeyDownButton11(object sender, KeyEventArgs e)
+        {
+            RegisterHotKeyForButton(speedKey, e.KeyCode, e.Control, e.Alt, e.Shift);
+            this.KeyDown -= Form1_KeyDownButton11;
+        }
+        private void Form1_KeyDownButton12(object sender, KeyEventArgs e)
+        {
+            RegisterHotKeyForButton(WallKey, e.KeyCode, e.Control, e.Alt, e.Shift);
+            this.KeyDown -= Form1_KeyDownButton12;
         }
 
         //private void Form1_KeyDownButton2(object sender, KeyEventArgs e)
@@ -284,6 +304,8 @@ namespace BR_PREMIUM_5._0
                 aimbots.LoadAimbotHeadV1();
                 aimbots.LoadAimbotExtra();
             }
+
+
             else if (button == aimdragkey)
             {
                 //if (aimbots.onaimdrag == false)
@@ -296,6 +318,8 @@ namespace BR_PREMIUM_5._0
                 //}
 
             }
+
+
             else if (button == aimneckkey)
             {
                 if (aimbots.onaimneck == false)
@@ -333,6 +357,14 @@ namespace BR_PREMIUM_5._0
             else if (button == m82boffkey)
             {
                 
+            }
+            else if (button == speedKey)
+            {
+                speedhackmain();
+            }
+            else if (button == WallKey)
+            {
+                wallhackmain();
             }
             else if (button == camerakey)
             {
@@ -420,6 +452,11 @@ namespace BR_PREMIUM_5._0
         {
             ssckey.Text = "None";
             M82Bkey.Text = "None";
+        }
+        private void ClearAllKeysMisc()
+        {
+            speedKey.Text = "None";
+            WallKey.Text = "None";
         }
 
         private void resetallkeys1_Click(object sender, EventArgs e)
@@ -1318,16 +1355,37 @@ namespace BR_PREMIUM_5._0
         {
             capture6();
         }
-
+        public void speedhackmain()
+        {
+            if (miscs.Speed == false)
+            {
+                miscs.EnablSpeed();
+            }
+            else
+            {
+                miscs.ResetSpeed();
+            }
+        
+        }public void wallhackmain()
+        {
+            if (miscs.Wall == false)
+            {
+                miscs.EnablWall();
+            }
+            else
+            {
+                miscs.ResetWall();
+            }
+        }
         private void sniperscope_Click(object sender, EventArgs e)
         {
             if (speedhack.Checked)
             {
-                miscs.EnableSpeedHck();
+                speedhackmain();
             }
             else
             {
-                miscs.ResetSpeedHack();
+                speedhackmain();
             }
         }
 
@@ -1569,7 +1627,7 @@ namespace BR_PREMIUM_5._0
 
         private void loadspeed_Click(object sender, EventArgs e)
         {
-            miscs.ScanSpeedHack();
+            miscs.ScanSpeed();
         }
 
         private void label51_Click(object sender, EventArgs e)
@@ -1634,6 +1692,35 @@ namespace BR_PREMIUM_5._0
         private void camerakey_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadwall_Click(object sender, EventArgs e)
+        {
+            miscs.ScanWall();
+        }
+
+        private void guna2CustomCheckBox4_Click(object sender, EventArgs e)
+        {
+            if (wallhack.Checked)
+            {
+                wallhackmain();
+
+            }
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            UnregisterAllHotkeys();
+            if (disablenot.Checked == false)
+            {
+                ShowMessageBox("All Keys is Cleared", "sucess", "");
+            }
+            ClearAllKeysMisc();
         }
     }
 }
