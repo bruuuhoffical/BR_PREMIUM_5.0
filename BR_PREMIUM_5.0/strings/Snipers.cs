@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,10 +34,10 @@ namespace BR_PREMIUM_5._0.strings
             _mainForm = mainForm;
 
         }
-        #region SSC
+        #region SniperScope
         public async Task ScanSniperScope()
         {
-            string search = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -70,7 +70,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableSniperScope()
         {
-            string replace = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string replace = "";
 
             if (SniperAddresses.Count > 0)
             {
@@ -122,7 +122,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetSniperScope()
         {
-            string originalPattern = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string originalPattern = "";
 
             if (SniperAddresses.Count > 0)
             {
@@ -178,8 +178,8 @@ namespace BR_PREMIUM_5._0.strings
 
         public async void EnableSniperScope1()
         {
-            string search = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
-            string replace = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -214,11 +214,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region SS
+        #region SniperSwitch
         public async void EnableSniperSwitch()
         {
-            string search = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00";
-            string replace = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 2B 00 00 80 2B 00 00 00 00 04 00 00 00 00 00 80 3F 00";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -254,8 +254,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableSniperSwitch()
         {
-            string search = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 2B 00 00 80 2B 00 00 00 00 04 00 00 00 00 00 80 3F 00";
-            string replace = "00 00 00 81 95 E3 3F 00 00 80 3F 00 00 80 3F 0A D7 A3 3D 00 00 00 00 00 00 5C 43 00 00 90 42 00 00 B4 42 96 00 00 00 00 00 00 00 00 00 00 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -290,11 +290,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region SDF
+        #region SniperDelayFix
         public async void Enablesdelayfix()
         {
-            string search = "EA 00 60 A0 E3 06 00 A0 E1 18 D0 4B E2 02 8B BD EC 70 8C";
-            string replace = "01 00 AF E3";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -330,8 +330,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void Disablesdelayfix()
         {
-            string search = "01 00 AF E3";
-            string replace = "EA 00 60 A0 E3 06 00 A0 E1 18 D0 4B E2 02 8B BD EC 70 8C";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -366,11 +366,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region M82BS
+        #region M82BSwitch
         public async void EnableM82BSwitch()
         {
-            string search = "9A 99 19 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00";
-            string replace = "9a 99 19 00 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -406,8 +406,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableM82BSwitch()
         {
-            string search = "9a 99 19 00 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01";
-            string replace = "9A 99 19 3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -442,10 +442,10 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region M82BL
+        #region M82BLocation
         public async Task ScanM82BLocation()
         {
-            string search = "19 00 00 00 69 00 6E 00 67 00 61 00 6D 00 65 00 2F 00 70 00 69 00 63 00 6B 00 75 00 70 00 2F 00 70 00 69 00 63 00 6B 00 75 00 70 00 5F 00 62 00 6D 00 39";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -478,7 +478,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableM82BLocation()
         {
-            string replace = "1D 00 00 00 65 00 66 00 66 00 65 00 63 00 74 00 73 00 2F 00 76 00 66 00 78 00 5F 00 69 00 6E 00 61 00 67 00 6D 00 65 00 5F 00 6C 00 61 00 73 00 65 00 72 00 5F 00 73 00 68 00 6F 00 70 00";
+            string replace = "";
 
             if (M82BAddress.Count > 0)
             {
@@ -530,7 +530,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetM82BLocation()
         {
-            string originalPattern = "19 00 00 00 69 00 6E 00 67 00 61 00 6D 00 65 00 2F 00 70 00 69 00 63 00 6B 00 75 00 70 00 2F 00 70 00 69 00 63 00 6B 00 75 00 70 00 5F 00 62 00 6D 00 39";
+            string originalPattern = "";
 
             if (M82BAddress.Count > 0)
             {
@@ -587,7 +587,7 @@ namespace BR_PREMIUM_5._0.strings
         #region SniperZoom
         public async Task ScanSniperZoom()
         {
-            string search = "FF FF FF FF 1A 88 03 00 09 8A 03 00 FF FF FF FF 08 00 00 00 00 00 60 40 CD CC 8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -620,7 +620,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableSniperZoom()
         {
-            string replace = "FF FF FF FF 3F 3F 3F 3F 3F 3F 3F 3F FF FF FF FF 08 00 00 00 00 00 60 40 CD CC 8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string replace = "";
 
             if (sniperzoomAddress.Count > 0)
             {
@@ -672,7 +672,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetSniperZoom()
         {
-            string originalPattern = "FF FF FF FF 1A 88 03 00 09 8A 03 00 FF FF FF FF 08 00 00 00 00 00 60 40 CD CC 8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string originalPattern = "";
 
             if (sniperzoomAddress.Count > 0)
             {
