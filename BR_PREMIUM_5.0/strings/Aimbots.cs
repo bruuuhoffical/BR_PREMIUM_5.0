@@ -44,15 +44,15 @@ namespace BR_PREMIUM_5._0.strings
 
         private static BRUUUHAIM magi = new BRUUUHAIM();
         private List<long> scannedAddresses = new List<long>();
-        private readonly string aobPattern = "00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 80 7f 00 00 80 7f 00 00 80 7f 00 00 80 ff";
+        private readonly string aobPattern = "";
 
-        private readonly string replaceValueTrue = "00 00 00 00 00 00 D1 40 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 80 7f 00 00 80 7f 00 00 80 7f 00 00 80 ff";
+        private readonly string replaceValueTrue = "";
 
-        private readonly string replaceValueFalse = "00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 80 bf 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f 00 00 00 00 00 00 00 00 00 00 80 bf 00 00 80 7f 00 00 80 7f 00 00 80 7f 00 00 80 ff";
+        private readonly string replaceValueFalse = "";
 
-        string AimbotScan = "A5 43 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 80 BF";
-        string headoffset = "0x2A";
-        string chestoffset = "0x26";
+        string AimbotScan = "";
+        string headoffset = "";
+        string chestoffset = "";
         private Dictionary<long, int> OrginalValues1 = new Dictionary<long, int>();
         private Dictionary<long, int> OrginalValues2 = new Dictionary<long, int>();
         private Dictionary<long, int> OrginalValues3 = new Dictionary<long, int>();
@@ -107,7 +107,7 @@ namespace BR_PREMIUM_5._0.strings
                 0x00007ffffffeffff,
                 //65536L,
                 //140737488289791L,
-                "FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A5 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF",
+                "",
                 true,
                 true
             );
@@ -141,12 +141,12 @@ namespace BR_PREMIUM_5._0.strings
             }
             else
             {
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 156L).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 108L).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
-                ShowMessageBox("Aimbot Drag Enabled", "", "");
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
+                //ShowMessageBox("Aimbot Drag Enabled", "", "");
                 onaimheadv1 = true;
             }
         }
@@ -160,11 +160,11 @@ namespace BR_PREMIUM_5._0.strings
             else
             {
 
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 108L).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 156L).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
 
                 ShowMessageBox("Aimbot Enabled", "", "");
             }
@@ -195,7 +195,7 @@ namespace BR_PREMIUM_5._0.strings
                 //0x00007ffffffeffff,
                 65536L,
                 140737488289791L,
-                "FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A5 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF",
+                "",
                 true,
                 true
             );
@@ -229,11 +229,11 @@ namespace BR_PREMIUM_5._0.strings
             }
             else
             {
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 156L).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 108L).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
                 ShowMessageBox("Aimbot Enabled", "", "");
                 onaimheadv1 = true;
             }
@@ -248,11 +248,11 @@ namespace BR_PREMIUM_5._0.strings
             else
             {
 
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 108L).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 156L).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
 
                 ShowMessageBox("Aimbot Enabled", "", "");
             }
@@ -280,7 +280,7 @@ namespace BR_PREMIUM_5._0.strings
             var task = RedLib.AoBScan(
                 0x0000000000010000,
                 0x00007ffffffeffff,
-                "FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A5 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF ?? ?? ?? ?? 00 00 00 00 00 00 80 BF",
+                "",
                 true,
                 true
             );
@@ -314,11 +314,11 @@ namespace BR_PREMIUM_5._0.strings
             }
             else
             {
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 112L).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 0x6C).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
                 ShowMessageBox("Aimbot Enabled", "", "");
                 onaimheadv1 = true;
             }
@@ -333,11 +333,11 @@ namespace BR_PREMIUM_5._0.strings
             else
             {
 
-                foreach (long address in AimbotAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 0x6C).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 112L).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
 
                 ShowMessageBox("Aimbot Enabled", "", "");
             }
@@ -364,7 +364,7 @@ namespace BR_PREMIUM_5._0.strings
             var task = RedLib.AoBScan(
                 0x0000000000010000,
                 0x00007ffffffeffff,
-                "FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A5 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF",
+                "",
                 true,
                 true
             );
@@ -396,7 +396,7 @@ namespace BR_PREMIUM_5._0.strings
             var task = RedLib.AoBScan(
                 0x0000000000010000,
                 0x00007ffffffeffff,
-                "FF FF FF FF FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 A5 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 BF ?? ?? ?? ?? 00 00 00 00 00 00 80 BF",
+                "",
                 true,
                 true
             );
@@ -430,13 +430,13 @@ namespace BR_PREMIUM_5._0.strings
             }
             else
             {
-                foreach (long address in AimbotNeckAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 0x9C).ToString("X"), 4);
-                    byte[] numArray1 = RedLib.AhReadMeFucker((address + 0x70).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 0x6C).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                    RedLib.WriteMemory((address + 0x6C).ToString("X"), "int", BitConverter.ToInt32(numArray1, 0).ToString());
-                }
+                //foreach (long address in AimbotNeckAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    byte[] numArray1 = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray1, 0).ToString());
+                //}
                 ShowMessageBox("Aimbot Enabled", "", "");
                 onaimneck = true;
             }
@@ -457,11 +457,11 @@ namespace BR_PREMIUM_5._0.strings
             }
             else
             {
-                foreach (long address in AimbotExtraAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 0xa0).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 0x6C).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
                 ShowMessageBox("Aimbot Enabled", "", "");
                 onaimneck = true;
             }
@@ -475,11 +475,11 @@ namespace BR_PREMIUM_5._0.strings
             else
             {
 
-                foreach (long address in AimbotNeckAddress)
-                {
-                    byte[] numArray = RedLib.AhReadMeFucker((address + 0x2C).ToString("X"), 4);
-                    RedLib.WriteMemory((address + 0x60).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
-                }
+                //foreach (long address in AimbotAddress)
+                //{
+                //    byte[] numArray = RedLib.AhReadMeFucker((address + ).ToString("X"), 4);
+                //    RedLib.WriteMemory((address + ).ToString("X"), "int", BitConverter.ToInt32(numArray, 0).ToString());
+                //}
 
                 ShowMessageBox("Aimbot Disabled", "", "");
             }
@@ -496,12 +496,12 @@ namespace BR_PREMIUM_5._0.strings
 
         public async Task ScanAimbotbody()
         {
-            string searchA = "dc 52 39 bd 27 c1 8b 3c c0 d0 f8 b9";
-            string searchB = "63 71 b0 bd 90 98 74 bb 00 00 80 b3";
-            string searchC = "7b f9 6c bd 58 34 09 bb b0 60 be ba";
-            string searchD = "54 1b 87 bd 90 c6 d7 ba 80 54 99 b9";
-            string searchE = "71 02 87 bd 90 fd d7 ba 40 18 98 39";
-            string searchF = "cc f8 6c bd 40 d2 ce b9 58 64 be 3a";
+            string searchA = "";
+            string searchB = "";
+            string searchC = "";
+            string searchD = "";
+            string searchE = "";
+            string searchF = "";
 
             List<string> searchPatterns = new List<string> { searchA, searchB, searchC, searchD, searchE, searchF };
 
@@ -546,12 +546,12 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableAimbotBody()
         {
-            string replaceA = "00 00 00 3e 0a d7 23 3d d2 a5 f9 bc";
-            string replaceB = "cd dc 79 44 90 98 74 bb 00 00 80 b3";
-            string replaceC = "cd dc 79 44 90 c6 d7 ba 80 54 99 b9";
-            string replaceD = "cd dc 79 44 90 c6 d7 ba 80 54 99 b9";
-            string replaceE = "cd dc 79 44 90 fd d7 ba 40 18 98 39";
-            string replaceF = "cd dc 79 44 40 d2 ce b9 58 64 be 3a";
+            string replaceA = "";
+            string replaceB = "";
+            string replaceC = "";
+            string replaceD = "";
+            string replaceE = "";
+            string replaceF = "";
 
             List<string> replacements = new List<string> { replaceA, replaceB, replaceC, replaceD, replaceE, replaceF };
 
@@ -609,12 +609,12 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetAimbotBody()
         {
-            string replaceA = "dc 52 39 bd 27 c1 8b 3c c0 d0 f8 b9";
-            string replaceB = "63 71 b0 bd 90 98 74 bb 00 00 80 b3";
-            string replaceC = "7b f9 6c bd 58 34 09 bb b0 60 be ba";
-            string replaceD = "54 1b 87 bd 90 c6 d7 ba 80 54 99 b9";
-            string replaceE = "71 02 87 bd 90 fd d7 ba 40 18 98 39";
-            string replaceF = "cc f8 6c bd 40 d2 ce b9 58 64 be 3a";
+            string replaceA = "";
+            string replaceB = "";
+            string replaceC = "";
+            string replaceD = "";
+            string replaceE = "";
+            string replaceF = "";
 
             List<string> replacements = new List<string> { replaceA, replaceB, replaceC, replaceD, replaceE, replaceF };
 
@@ -678,8 +678,8 @@ namespace BR_PREMIUM_5._0.strings
         #region AimFov
         public async void EnableAimFov()
         {
-            string search = "00 00 20 42 00 00 40 40 00 00 70 42 00 00 00 00 00 00 C0 3F 0A D7 A3 3B 0A D7 A3 3B 8F C2 75 3D AE 47 E1 3D 9A 99 19 3E CD CC 4C 3E A4 70 FD 3E";
-            string replace = "00 00 20 42 00 00 FF FF 00 00 70 42 00 00 00 00 00 00 C0 3F 0A D7 A3 3B 0A D7 A3 3B 8F C2 75 3D AE 47 E1 3D 9A 99 19 3E CD CC 4C 3E A4 70 FD 3E";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -715,8 +715,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableAimFov()
         {
-            string search = "00 00 20 42 00 00 FF FF 00 00 70 42 00 00 00 00 00 00 C0 3F 0A D7 A3 3B 0A D7 A3 3B 8F C2 75 3D AE 47 E1 3D 9A 99 19 3E CD CC 4C 3E A4 70 FD 3E";
-            string replace = "00 00 20 42 00 00 40 40 00 00 70 42 00 00 00 00 00 00 C0 3F 0A D7 A3 3B 0A D7 A3 3B 8F C2 75 3D AE 47 E1 3D 9A 99 19 3E CD CC 4C 3E A4 70 FD 3E";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)

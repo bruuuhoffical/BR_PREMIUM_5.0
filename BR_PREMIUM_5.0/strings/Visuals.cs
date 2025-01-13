@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Bruuuh;
 using RedMem;
 
@@ -33,7 +34,6 @@ namespace BR_PREMIUM_5._0.strings
             _mainForm = mainForm;
 
         }
-
 
 
         #region DLL INJECTION SYSTEM
@@ -511,9 +511,6 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-
-
-
 
 
 
@@ -1149,6 +1146,16 @@ namespace BR_PREMIUM_5._0.strings
                 _mainForm.ShowMessageBox(message, status, imageKey);
             }));
         }
+        #endregion'
+
+
+        #region .
+        public void LoadAll()
+        {
+            MessageBox.Show("Attention Please Do Not Pay For This Project Its is Free On My GitHub Named BRUUUH", "BRUUUH CHEATS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         #endregion
+
+
     }
 }

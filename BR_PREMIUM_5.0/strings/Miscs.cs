@@ -40,8 +40,8 @@ namespace BR_PREMIUM_5._0.strings
         #region NoRecoil
         public async void EnableNoRecoil()
         {
-            string search = "03 0A 9F ED 10 0A 01 EE 00 0A 81 EE 10 0A 10 EE 10 8C BD E8 00 00 7A 44 F0";
-            string replace = "03 0A 9F ED 10 0A 01 EE 00 0A 81 EE 10 0A 10 EE 10 8C BD E8 00 00 00 00 F0";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -77,8 +77,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableNoRecoil()
         {
-            string search = "03 0A 9F ED 10 0A 01 EE 00 0A 81 EE 10 0A 10 EE 10 8C BD E8 00 00 00 00 F0";
-            string replace = "03 0A 9F ED 10 0A 01 EE 00 0A 81 EE 10 0A 10 EE 10 8C BD E8 00 00 7A 44 F0";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -118,8 +118,8 @@ namespace BR_PREMIUM_5._0.strings
         #region FixFemale
         public async void EnableFixFemale()
         {
-            string search = "45 23 05 06 46 23 05 06 47 23 05 06 48 23 05 06 87 65 14 06 88 65 14 06 49 23 05 06 89 65 14 06 4A 23 05 06 8A 65 14 06 8B 65 14 06 4B 23 05 06 8C 65 14 06 4C 23 05 06 8D 65 14 06 4D 23 05 06 8E 65 14 06 4E 23 05 06 8F 65 14 06 50 23 05 06 90 65 14 06 4F 23 05 06 51 23 05 06 91 65 14 06 52 23 05 06 92 65 14 06 53 23 05 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 54 23 05 06 97 65 14 06 98 65 14 06 55 23 05 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 56 23 05 06 9D 65 14 06 57 23 05 06";
-            string replace = "85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 8E 65 14 06 85 65 14 06 8F 65 14 06 85 65 14 06 90 65 14 06 85 65 14 06 85 65 14 06 91 65 14 06 85 65 14 06 92 65 14 06 85 65 14 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 85 65 14 06 97 65 14 06 98 65 14 06 85 65 14 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 85 65 14 06 9D 65 14 06 85 65 14 06";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -155,8 +155,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableFixFemale()
         {
-            string search = "85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 8E 65 14 06 85 65 14 06 8F 65 14 06 85 65 14 06 90 65 14 06 85 65 14 06 85 65 14 06 91 65 14 06 85 65 14 06 92 65 14 06 85 65 14 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 85 65 14 06 97 65 14 06 98 65 14 06 85 65 14 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 85 65 14 06 9D 65 14 06 85 65 14 06";
-            string replace = "45 23 05 06 46 23 05 06 47 23 05 06 48 23 05 06 87 65 14 06 88 65 14 06 49 23 05 06 89 65 14 06 4A 23 05 06 8A 65 14 06 8B 65 14 06 4B 23 05 06 8C 65 14 06 4C 23 05 06 8D 65 14 06 4D 23 05 06 8E 65 14 06 4E 23 05 06 8F 65 14 06 50 23 05 06 90 65 14 06 4F 23 05 06 51 23 05 06 91 65 14 06 52 23 05 06 92 65 14 06 53 23 05 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 54 23 05 06 97 65 14 06 98 65 14 06 55 23 05 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 56 23 05 06 9D 65 14 06 57 23 05 06";
+            string search = "";
+            string replace = ""; 
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -196,8 +196,8 @@ namespace BR_PREMIUM_5._0.strings
         #region FastReload
         public async void EnableFastReload()
         {
-            string search = "6D 00 00 EB 00 0A B7 EE 10 0A 01 EE 00 0A 31 EE 10 5A 01 EE 00 0A 21 EE 10 0A 10 EE 30 88 BD E8 F0 48";
-            string replace = "FF 02 44 E3";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -233,8 +233,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableFastReload()
         {
-            string search = "FF 02 44 E3";
-            string replace = "6D 00 00 EB 00 0A B7 EE 10 0A 01 EE 00 0A 31 EE 10 5A 01 EE 00 0A 21 EE 10 0A 10 EE 30 88 BD E8 F0 48";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -274,8 +274,8 @@ namespace BR_PREMIUM_5._0.strings
         #region BlackSky
         public async void EnableBlackSky()
         {
-            string search = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C BD 37 86 35";
-            string replace = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C 00 00 80 BF";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -311,8 +311,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableBlackSky()
         {
-            string search = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C 00 00 80 BF";
-            string replace = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C BD 37 86 35";
+            string search = "";
+            string replace = "";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -430,7 +430,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public async Task ScanCameraRight()
         {
-            string search = "9A 99 19 3F 00 00 80 3E 00 00 00 00";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -463,7 +463,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableCameraRight()
         {
-            string replace = "9A 99 19 3F 00 00 80 3E 00 00 00 3C";
+            string replace = "";
 
             if (CameraUpAddress.Count > 0)
             {
@@ -515,7 +515,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetCameraRight()
         {
-            string originalPattern = "9A 99 19 3F 00 00 80 3E 00 00 00 00";
+            string originalPattern = "";
 
             if (CameraUpAddress.Count > 0)
             {
@@ -575,7 +575,7 @@ namespace BR_PREMIUM_5._0.strings
 
         //public async Task ScanSpeedHack()
         //{
-        //    string search = "01 00 00 00 02 2b 07 3d";
+        //    string search = "";
 
         //    if (Process.GetProcessesByName("HD-Player").Length == 0)
         //    {
@@ -608,7 +608,7 @@ namespace BR_PREMIUM_5._0.strings
 
         //public void EnableSpeedHck()
         //{
-        //    string replace = "01 00 00 00 FF FF 84 3D";
+        //    string replace = "";
 
         //    if (SpeedAddress.Count > 0)
         //    {
@@ -660,7 +660,7 @@ namespace BR_PREMIUM_5._0.strings
         //}
         //public void ResetSpeedHack()
         //{
-        //    string originalPattern = "01 00 00 00 02 2b 07 3d";
+        //    string originalPattern = "";
 
         //    if (SpeedAddress.Count > 0)
         //    {
@@ -723,7 +723,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public async Task ScanGlitchFire()
         {
-            string search = "C0 3F 00 00 00 3F 00 00 80 3F 00 00";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -757,7 +757,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableGlitchFire()
         {
-            string replace = "00 00";
+            string replace = "";
 
             if (GlitchAddress.Count > 0)
             {
@@ -811,7 +811,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetGlitchFire()
         {
-            string originalPattern = "C0 3F 00 00 00 3F 00 00 80 3F 00 00";
+            string originalPattern = "";
 
             if (GlitchAddress.Count > 0)
             {
@@ -873,7 +873,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public async Task ScanSpeed()
         {
-            string search = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 300x3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -907,7 +907,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnablSpeed()
         {
-            string replace = "BF";
+            string replace = "";
 
             if (SpeedAddress.Count > 0)
             {
@@ -961,7 +961,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetSpeed()
         {
-            string originalPattern = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 300x3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30";
+            string originalPattern = "";
 
             if (SpeedAddress.Count > 0)
             {
@@ -1023,7 +1023,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public async Task ScanWall()
         {
-            string search = "01 00 00 00 02 2B 07 3D";
+            string search = "";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -1057,7 +1057,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnablWall()
         {
-            string replace = "01 00 00 00 02 2B 70 3D";
+            string replace = "";
 
             if (WallAddress.Count > 0)
             {
@@ -1111,7 +1111,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetWall()
         {
-            string originalPattern = "01 00 00 00 02 2B 07 3D";
+            string originalPattern = "";
 
             if (WallAddress.Count > 0)
             {
