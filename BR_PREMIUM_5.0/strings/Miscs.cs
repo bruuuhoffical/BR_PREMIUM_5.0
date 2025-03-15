@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Bruuuh;
-using RedMem;
-using System.Diagnostics;
+using Memory;
 
 namespace BR_PREMIUM_5._0.strings
 {
@@ -24,7 +23,7 @@ namespace BR_PREMIUM_5._0.strings
         private int _processId;
 
         private HOME _mainForm;
-        private List<long> CameraUpAddress = new List<long>();
+        private List<long> CameraLeftAddress = new List<long>();
         private List<long> SpeedAddress = new List<long>();
         private List<long> GlitchAddress = new List<long>();
         private List<long> WallAddress = new List<long>();
@@ -36,12 +35,13 @@ namespace BR_PREMIUM_5._0.strings
         public bool Speed = false;
         public bool Wall = false;
         public bool Glitch = false;
+        public bool CameraUp = false;
 
         #region NoRecoil
         public async void EnableNoRecoil()
         {
-            string search = "";
-            string replace = "";
+            string search = "E8 00 00 7A 44 F0 48 2D E9 10 B0 8D E2 02 8B 2D ED 08 D0 4D E2 00 50 A0 E1 10 1A 08 EE 08 40 95 E5 00 00 54 E3";
+            string replace = "E8 00 00 7A 7A F0 48 2D E9 10 B0 8D E2 02 8B 2D ED 08 D0 4D E2 00 50 A0 E1 10 1A 08 EE 08 40 95 E5 00 00 54 E3";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -77,8 +77,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableNoRecoil()
         {
-            string search = "";
-            string replace = "";
+            string search = "E8 00 00 7A 7A F0 48 2D E9 10 B0 8D E2 02 8B 2D ED 08 D0 4D E2 00 50 A0 E1 10 1A 08 EE 08 40 95 E5 00 00 54 E3";
+            string replace = "E8 00 00 7A 44 F0 48 2D E9 10 B0 8D E2 02 8B 2D ED 08 D0 4D E2 00 50 A0 E1 10 1A 08 EE 08 40 95 E5 00 00 54 E3";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -113,13 +113,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
+
+
         #region FixFemale
         public async void EnableFixFemale()
         {
-            string search = "";
-            string replace = "";
+            string search = "45 23 05 06 46 23 05 06 47 23 05 06 48 23 05 06 87 65 14 06 88 65 14 06 49 23 05 06 89 65 14 06 4A 23 05 06 8A 65 14 06 8B 65 14 06 4B 23 05 06 8C 65 14 06 4C 23 05 06 8D 65 14 06 4D 23 05 06 8E 65 14 06 4E 23 05 06 8F 65 14 06 50 23 05 06 90 65 14 06 4F 23 05 06 51 23 05 06 91 65 14 06 52 23 05 06 92 65 14 06 53 23 05 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 54 23 05 06 97 65 14 06 98 65 14 06 55 23 05 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 56 23 05 06 9D 65 14 06 57 23 05 06";
+            string replace = "85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 8E 65 14 06 85 65 14 06 8F 65 14 06 85 65 14 06 90 65 14 06 85 65 14 06 85 65 14 06 91 65 14 06 85 65 14 06 92 65 14 06 85 65 14 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 85 65 14 06 97 65 14 06 98 65 14 06 85 65 14 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 85 65 14 06 9D 65 14 06 85 65 14 06";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -155,8 +155,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableFixFemale()
         {
-            string search = "";
-            string replace = ""; 
+            string search = "85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 85 65 14 06 8E 65 14 06 85 65 14 06 8F 65 14 06 85 65 14 06 90 65 14 06 85 65 14 06 85 65 14 06 91 65 14 06 85 65 14 06 92 65 14 06 85 65 14 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 85 65 14 06 97 65 14 06 98 65 14 06 85 65 14 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 85 65 14 06 9D 65 14 06 85 65 14 06";
+            string replace = "45 23 05 06 46 23 05 06 47 23 05 06 48 23 05 06 87 65 14 06 88 65 14 06 49 23 05 06 89 65 14 06 4A 23 05 06 8A 65 14 06 8B 65 14 06 4B 23 05 06 8C 65 14 06 4C 23 05 06 8D 65 14 06 4D 23 05 06 8E 65 14 06 4E 23 05 06 8F 65 14 06 50 23 05 06 90 65 14 06 4F 23 05 06 51 23 05 06 91 65 14 06 52 23 05 06 92 65 14 06 53 23 05 06 93 65 14 06 94 65 14 06 95 65 14 06 96 65 14 06 54 23 05 06 97 65 14 06 98 65 14 06 55 23 05 06 99 65 14 06 9A 65 14 06 9B 65 14 06 9C 65 14 06 56 23 05 06 9D 65 14 06 57 23 05 06";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -191,13 +191,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
+
+
         #region FastReload
         public async void EnableFastReload()
         {
-            string search = "";
-            string replace = "";
+            string search = "6D 00 00 EB 00 0A B7 EE 10 0A 01 EE 00 0A 31 EE 10 5A 01 EE 00 0A 21 EE 10 0A 10 EE 30 88 BD E8 F0 48";
+            string replace = "FF 02 44 E3";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -233,8 +233,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableFastReload()
         {
-            string search = "";
-            string replace = "";
+            string search = "FF 02 44 E3";
+            string replace = "6D 00 00 EB 00 0A B7 EE 10 0A 01 EE 00 0A 31 EE 10 5A 01 EE 00 0A 21 EE 10 0A 10 EE 30 88 BD E8 F0 48";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -269,13 +269,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
+
+
         #region BlackSky
         public async void EnableBlackSky()
         {
-            string search = "";
-            string replace = "";
+            string search = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C BD 37 86 35";
+            string replace = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C 00 00 80 BF";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -311,8 +311,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableBlackSky()
         {
-            string search = "";
-            string replace = "";
+            string search = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C 00 00 80 BF";
+            string replace = "A4 70 7D 3F 3A CD 13 3F 0A D7 23 3C BD 37 86 35";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -347,9 +347,9 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
+
         #region CameraUp
-        public async void EnableCameraUp1()
+        public async void EnableCameraUp()
         {
             string search = "";
             string replace = "";
@@ -426,11 +426,11 @@ namespace BR_PREMIUM_5._0.strings
         #endregion
 
 
-        #region CameraRight
+        #region CameraLeft
 
-        public async Task ScanCameraRight()
+        public async Task ScanCameraLeft()
         {
-            string search = "";
+            string search = "00 00 00 00 22 9E 93 40 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 80 7F 00 00 80 7F 00 00 80 7F 00 00 80 FF";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -445,8 +445,9 @@ namespace BR_PREMIUM_5._0.strings
 
             if (foundAddresses.Count() > 0)
             {
-                CameraUpAddress = foundAddresses.ToList();
+                CameraLeftAddress = foundAddresses.ToList();
                 ShowMessageBox("Scan Success", "", "");
+                CameraUp = false;
             }
             else
             {
@@ -461,15 +462,15 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
 
-        public void EnableCameraRight()
+        public void EnableCameraLeft()
         {
-            string replace = "";
+            string replace = "00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 80 7F 00 00 80 7F 00 00 80 7F 00 00 80 FF";
 
-            if (CameraUpAddress.Count > 0)
+            if (CameraLeftAddress.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in CameraUpAddress)
+                foreach (var address in CameraLeftAddress)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
                     if (writeResult)
@@ -486,7 +487,8 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("CMR Location Enabled", "", "");
+                        ShowMessageBox("CML Location Enabled", "", "");
+                        CameraUp = true;
                     }
                 }
                 else
@@ -497,7 +499,8 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("CMR Error", "failed", "");
+                        ShowMessageBox("CML Error", "failed", "");
+                        CameraUp = false;
                     }
                 }
             }
@@ -513,15 +516,15 @@ namespace BR_PREMIUM_5._0.strings
                 }
             }
         }
-        public void ResetCameraRight()
+        public void ResetCameraLeft()
         {
-            string originalPattern = "";
+            string originalPattern = "00 00 00 00 22 9E 93 40 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 80 BF 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 80 BF 00 00 80 7F 00 00 80 7F 00 00 80 7F 00 00 80 FF";
 
-            if (CameraUpAddress.Count > 0)
+            if (CameraLeftAddress.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in CameraUpAddress)
+                foreach (var address in CameraLeftAddress)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
                     if (writeResult)
@@ -540,6 +543,7 @@ namespace BR_PREMIUM_5._0.strings
                     {
 
                         ShowMessageBox("CML Disabled", "", "");
+                        CameraUp = false;
                     }
                 }
                 else
@@ -552,6 +556,7 @@ namespace BR_PREMIUM_5._0.strings
                     {
 
                         ShowMessageBox("CML Error 101", "failed", "");
+                        CameraUp = true;
                     }
                 }
             }
@@ -569,13 +574,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
+
+
         //#region SpeedHack
 
         //public async Task ScanSpeedHack()
         //{
-        //    string search = "";
+        //    string search = "01 00 00 00 02 2b 07 3d";
 
         //    if (Process.GetProcessesByName("HD-Player").Length == 0)
         //    {
@@ -608,7 +613,7 @@ namespace BR_PREMIUM_5._0.strings
 
         //public void EnableSpeedHck()
         //{
-        //    string replace = "";
+        //    string replace = "01 00 00 00 FF FF 84 3D";
 
         //    if (SpeedAddress.Count > 0)
         //    {
@@ -660,7 +665,7 @@ namespace BR_PREMIUM_5._0.strings
         //}
         //public void ResetSpeedHack()
         //{
-        //    string originalPattern = "";
+        //    string originalPattern = "01 00 00 00 02 2b 07 3d";
 
         //    if (SpeedAddress.Count > 0)
         //    {
@@ -714,16 +719,16 @@ namespace BR_PREMIUM_5._0.strings
         //    }
         //}
         //#endregion
-        
-        
-        
-        
-        
-        #region GlitchFire
 
-        public async Task ScanGlitchFire()
+
+
+
+
+        #region GhostHack
+
+        public async Task ScanGhostHack()
         {
-            string search = "";
+            string search = "F0 4F 2D E9 1C B0 8D E2 54 D0 4D E2 00 A0 A0 E1 48 0E 9F E5 01 50 A0 E1 00 00 8F E0 00 00 D0 E5 00 00 50 E3 06 00 00 1A 34 0E 9F E5 00 00 9F E7 00 00 90 E5";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -755,9 +760,10 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
 
-        public void EnableGlitchFire()
+        public void EnableGhostHack()
         {
-            string replace = "";
+            string replace = "00 00 A0 E3 1E FF 2F E1";
+            //string replace1 = "00 00 70 c1 00 00 a0 41 00 00 10 41 00 00 00 3f e6 00 00 00 00 00 b0 7e";
 
             if (GlitchAddress.Count > 0)
             {
@@ -766,6 +772,7 @@ namespace BR_PREMIUM_5._0.strings
                 foreach (var address in GlitchAddress)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
+                    //bool writeResult1 = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace1);
                     if (writeResult)
                     {
                         success = true;
@@ -780,7 +787,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("GLT Location Enabled", "", "");
+                        ShowMessageBox("GH Location Enabled", "", "");
                         Glitch = true;
                     }
                 }
@@ -792,7 +799,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("GLT Error", "failed", "");
+                        ShowMessageBox("GH Error", "failed", "");
                         Glitch = false;
                     }
                 }
@@ -809,9 +816,9 @@ namespace BR_PREMIUM_5._0.strings
                 }
             }
         }
-        public void ResetGlitchFire()
+        public void ReseGhostHack()
         {
-            string originalPattern = "";
+            string originalPattern = "F0 4F 2D E9 1C B0 8D E2";
 
             if (GlitchAddress.Count > 0)
             {
@@ -835,7 +842,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("GLT Location Disabled", "", "");
+                        ShowMessageBox("GH Disabled", "", "");
                         Glitch = false;
                     }
                 }
@@ -848,7 +855,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("GLT Error 101", "failed", "");
+                        ShowMessageBox("GH Error 101", "failed", "");
                         Glitch = true;
                     }
                 }
@@ -867,13 +874,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
+
+
         #region SpeedHack
 
         public async Task ScanSpeed()
         {
-            string search = "";
+            string search = "00 01 00 00 00 02 2B 07 3D 00";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -907,7 +914,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnablSpeed()
         {
-            string replace = "";
+            string replace = "00 01 00 00 00 92 E4 67 3D 00";
 
             if (SpeedAddress.Count > 0)
             {
@@ -961,7 +968,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetSpeed()
         {
-            string originalPattern = "";
+            string originalPattern = "00 01 00 00 00 02 2B 07 3D 00";
 
             if (SpeedAddress.Count > 0)
             {
@@ -1017,13 +1024,13 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        
-        
-        #region WallHack
+
+
+    #region WallHack
 
         public async Task ScanWall()
         {
-            string search = "";
+            string search = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30 00 4F E2 43 2A B0 EE EF 0A 60 F4 43 6A F0 EE 1C 00 8A E2 43 5A F0 EE 8F 0A";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -1050,14 +1057,14 @@ namespace BR_PREMIUM_5._0.strings
                 else
                 {
                     ShowMessageBox("Scan Failed", "Memory pattern not found", "");
-                    Wall = false;
+                    //Wall = false;
                 }
             }
         }
 
         public void EnablWall()
         {
-            string replace = "";
+            string replace = "BF AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30";
 
             if (WallAddress.Count > 0)
             {
@@ -1106,12 +1113,13 @@ namespace BR_PREMIUM_5._0.strings
                 else
                 {
                     ShowMessageBox("Please Load First !", "failed", "");
+                    Wall = false;
                 }
             }
         }
         public void ResetWall()
         {
-            string originalPattern = "";
+            string originalPattern = "3F AE 47 81 3F 00 1A B7 EE DC 3A 9F ED 30 00 4F E2 43 2A B0 EE EF 0A 60 F4 43 6A F0 EE 1C 00 8A E2 43 5A F0 EE 8F 0A";
 
             if (WallAddress.Count > 0)
             {
@@ -1163,6 +1171,7 @@ namespace BR_PREMIUM_5._0.strings
                 {
 
                     ShowMessageBox("Please Load First !", "failed", "");
+                    Wall = true;
                 }
             }
         }

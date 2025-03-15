@@ -31,8 +31,8 @@ namespace BR_PREMIUM_5._0
             _messageBoxes = new List<MessageBoxControl>();
             _messageBox = new MessageBoxControl
             {
-                Visible = false, // Initially hidden
-                Dock = DockStyle.Bottom // Slide in from the bottom
+                Visible = false,
+                Dock = DockStyle.Bottom
             };
             this.Controls.Add(_messageBox);
             #region Particles
@@ -281,6 +281,17 @@ namespace BR_PREMIUM_5._0
         private void LOGIN_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void LOGIN_Paint(object sender, PaintEventArgs e)
+        {
+            Color borderColor = Color.Yellow;
+            int borderThickness = 3;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen, 0, 0, this.Width - 1, this.Height - 1);
+            }
         }
     }
 }

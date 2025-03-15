@@ -71,7 +71,7 @@
             this.testbar.Maximum = 5;
             this.testbar.Name = "testbar";
             this.testbar.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
-            this.testbar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.testbar.ProgressColor = System.Drawing.Color.Yellow;
             this.testbar.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.testbar.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.testbar.Size = new System.Drawing.Size(221, 2);
@@ -108,7 +108,7 @@
             // 
             this.msglbl.AutoSize = true;
             this.msglbl.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msglbl.ForeColor = System.Drawing.Color.White;
+            this.msglbl.ForeColor = System.Drawing.Color.Yellow;
             this.msglbl.Location = new System.Drawing.Point(18, 48);
             this.msglbl.Name = "msglbl";
             this.msglbl.Size = new System.Drawing.Size(32, 16);

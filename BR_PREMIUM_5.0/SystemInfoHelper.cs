@@ -7,7 +7,8 @@ using Guna.UI2.WinForms;
 
 public class SystemInfoHelper
 {
-    private readonly Label fpsLabel, pcNameLabel, hwidLabel, ipLabel, ramLabel, cpuLabel;
+    private readonly Label pcNameLabel, hwidLabel, ipLabel, ramLabel, cpuLabel;
+    //fpsLabel,
     private readonly Guna2CircleProgressBar ramBar, cpuBar;
     private readonly Timer updateTimer;
     private PerformanceCounter cpuCounter;
@@ -15,10 +16,11 @@ public class SystemInfoHelper
     private float totalRam;
 
     public SystemInfoHelper(
-        Label fps, Label pcName, Label hwid, Label ip, Label ram, Label cpu,
+        //Label fps,
+        Label pcName, Label hwid, Label ip, Label ram, Label cpu,
         Guna2CircleProgressBar ramBar, Guna2CircleProgressBar cpuBar)
     {
-        fpsLabel = fps;
+        //fpsLabel = fps;
         pcNameLabel = pcName;
         hwidLabel = hwid;
         ipLabel = ip;
@@ -31,7 +33,7 @@ public class SystemInfoHelper
         ramCounter = new PerformanceCounter("Memory", "Available MBytes");
         totalRam = GetTotalPhysicalMemoryInMB();
 
-        updateTimer = new Timer { Interval = 1500 };
+        updateTimer = new Timer { Interval = 5500 };
         updateTimer.Tick += UpdateSystemInfo;
     }
 
@@ -42,7 +44,7 @@ public class SystemInfoHelper
 
     private void UpdateSystemInfo(object sender, EventArgs e)
     {
-        fpsLabel.Text = $"{new Random().Next(25, 240)} FPS";
+        //fpsLabel.Text = $"{new Random().Next(25, 240)} FPS";
         pcNameLabel.Text = Environment.MachineName;
         hwidLabel.Text = GetHardwareId();
         ipLabel.Text = GetLocalIPAddress();

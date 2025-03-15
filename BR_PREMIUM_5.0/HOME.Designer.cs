@@ -151,7 +151,7 @@
             this.label43 = new System.Windows.Forms.Label();
             this.camerakey = new Guna.UI2.WinForms.Guna2Button();
             this.label44 = new System.Windows.Forms.Label();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.ghostkey = new Guna.UI2.WinForms.Guna2Button();
             this.label45 = new System.Windows.Forms.Label();
             this.WallKey = new Guna.UI2.WinForms.Guna2Button();
             this.label46 = new System.Windows.Forms.Label();
@@ -269,12 +269,13 @@
             this.loginLogotext.AutoSize = true;
             this.loginLogotext.BackColor = System.Drawing.Color.Transparent;
             this.loginLogotext.Font = new System.Drawing.Font("Nevan RUS", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLogotext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.loginLogotext.ForeColor = System.Drawing.Color.Yellow;
             this.loginLogotext.Location = new System.Drawing.Point(117, 16);
             this.loginLogotext.Name = "loginLogotext";
             this.loginLogotext.Size = new System.Drawing.Size(612, 83);
             this.loginLogotext.TabIndex = 1;
             this.loginLogotext.Text = "BRUUUH CHEATS";
+            this.loginLogotext.Paint += new System.Windows.Forms.PaintEventHandler(this.loginLogotext_Paint);
             // 
             // minimize
             // 
@@ -307,7 +308,7 @@
             // particles
             // 
             this.particles.Enabled = true;
-            this.particles.Interval = 10;
+            this.particles.Interval = 3;
             this.particles.Tick += new System.EventHandler(this.particles_Tick);
             // 
             // mainborderless
@@ -318,14 +319,15 @@
             this.mainborderless.DockForm = false;
             this.mainborderless.DockIndicatorTransparencyValue = 0.6D;
             this.mainborderless.DragEndTransparencyValue = 0.9D;
+            this.mainborderless.HasFormShadow = false;
             this.mainborderless.ResizeForm = false;
-            this.mainborderless.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mainborderless.ShadowColor = System.Drawing.Color.Yellow;
             this.mainborderless.TransparentWhileDrag = true;
             // 
             // navigationspanel
             // 
             this.navigationspanel.BackColor = System.Drawing.Color.Transparent;
-            this.navigationspanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.navigationspanel.BorderColor = System.Drawing.Color.Yellow;
             this.navigationspanel.BorderRadius = 8;
             this.navigationspanel.BorderThickness = 2;
             this.navigationspanel.Controls.Add(this.snipernav);
@@ -344,9 +346,9 @@
             // 
             this.snipernav.BorderRadius = 10;
             this.snipernav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.snipernav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.snipernav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.snipernav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.snipernav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.rifleon;
+            this.snipernav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.settingsonyellow;
             this.snipernav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.snipernav.FillColor = System.Drawing.Color.Transparent;
             this.snipernav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -365,9 +367,9 @@
             // 
             this.homenav.BorderRadius = 10;
             this.homenav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.homenav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.homenav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.homenav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.homenav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.homeon;
+            this.homenav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.homeonyellow;
             this.homenav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.homenav.FillColor = System.Drawing.Color.Transparent;
             this.homenav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -386,9 +388,9 @@
             // 
             this.miscnav.BorderRadius = 10;
             this.miscnav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.miscnav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.miscnav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.miscnav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.miscnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.fireon;
+            this.miscnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.fireonyellow;
             this.miscnav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.miscnav.FillColor = System.Drawing.Color.Transparent;
             this.miscnav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -407,9 +409,9 @@
             // 
             this.settingsnav.BorderRadius = 10;
             this.settingsnav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.settingsnav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.settingsnav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.settingsnav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.settingsnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.settingson;
+            this.settingsnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.settingsonyellow;
             this.settingsnav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.settingsnav.FillColor = System.Drawing.Color.Transparent;
             this.settingsnav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -427,9 +429,9 @@
             // 
             this.visualsnav.BorderRadius = 10;
             this.visualsnav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.visualsnav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.visualsnav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.visualsnav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.visualsnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.visualson;
+            this.visualsnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.eyeonyellow;
             this.visualsnav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.visualsnav.FillColor = System.Drawing.Color.Transparent;
             this.visualsnav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -447,9 +449,9 @@
             // 
             this.aimbotnav.BorderRadius = 10;
             this.aimbotnav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.aimbotnav.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimbotnav.CheckedState.CustomBorderColor = System.Drawing.Color.Yellow;
             this.aimbotnav.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.aimbotnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.aimon;
+            this.aimbotnav.CheckedState.Image = global::BR_PREMIUM.Properties.Resources.aimonyellow;
             this.aimbotnav.CustomBorderThickness = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.aimbotnav.FillColor = System.Drawing.Color.Transparent;
             this.aimbotnav.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
@@ -467,7 +469,7 @@
             // infopanel
             // 
             this.infopanel.BackColor = System.Drawing.Color.Transparent;
-            this.infopanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.infopanel.BorderColor = System.Drawing.Color.Yellow;
             this.infopanel.BorderRadius = 8;
             this.infopanel.BorderThickness = 2;
             this.infopanel.Controls.Add(this.expiry);
@@ -506,7 +508,7 @@
             // 
             this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(33, 33);
-            this.guna2ImageButton1.Image = global::BR_PREMIUM.Properties.Resources.profile_user;
+            this.guna2ImageButton1.Image = global::BR_PREMIUM.Properties.Resources.profileyellow32;
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(33, 33);
@@ -520,7 +522,7 @@
             // homepan
             // 
             this.homepan.BackColor = System.Drawing.Color.Transparent;
-            this.homepan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.homepan.BorderColor = System.Drawing.Color.Yellow;
             this.homepan.BorderRadius = 8;
             this.homepan.BorderThickness = 2;
             this.homepan.Controls.Add(this.label12);
@@ -773,12 +775,12 @@
             this.cpubar.FillColor = System.Drawing.Color.Gray;
             this.cpubar.FillThickness = 12;
             this.cpubar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cpubar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cpubar.ForeColor = System.Drawing.Color.Yellow;
             this.cpubar.Location = new System.Drawing.Point(453, 75);
             this.cpubar.Minimum = 0;
             this.cpubar.Name = "cpubar";
-            this.cpubar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.cpubar.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cpubar.ProgressColor = System.Drawing.Color.Yellow;
+            this.cpubar.ProgressColor2 = System.Drawing.Color.Yellow;
             this.cpubar.ProgressThickness = 12;
             this.cpubar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.cpubar.ShowText = true;
@@ -793,12 +795,12 @@
             this.rambar.FillColor = System.Drawing.Color.Gray;
             this.rambar.FillThickness = 12;
             this.rambar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.rambar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rambar.ForeColor = System.Drawing.Color.Yellow;
             this.rambar.Location = new System.Drawing.Point(314, 75);
             this.rambar.Minimum = 0;
             this.rambar.Name = "rambar";
-            this.rambar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.rambar.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rambar.ProgressColor = System.Drawing.Color.Yellow;
+            this.rambar.ProgressColor2 = System.Drawing.Color.Yellow;
             this.rambar.ProgressThickness = 12;
             this.rambar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.rambar.ShowText = true;
@@ -810,6 +812,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Enabled = false;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Gray;
             this.label25.Location = new System.Drawing.Point(9, 9);
@@ -817,11 +820,13 @@
             this.label25.Size = new System.Drawing.Size(36, 16);
             this.label25.TabIndex = 22;
             this.label25.Text = "FPS";
+            this.label25.Visible = false;
             // 
             // fps
             // 
             this.fps.AutoSize = true;
             this.fps.BackColor = System.Drawing.Color.Transparent;
+            this.fps.Enabled = false;
             this.fps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fps.ForeColor = System.Drawing.Color.Gray;
             this.fps.Location = new System.Drawing.Point(47, 9);
@@ -829,6 +834,7 @@
             this.fps.Size = new System.Drawing.Size(45, 16);
             this.fps.TabIndex = 21;
             this.fps.Text = "NULL";
+            this.fps.Visible = false;
             // 
             // drag1
             // 
@@ -869,7 +875,7 @@
             // aimbotspanel
             // 
             this.aimbotspanel.BackColor = System.Drawing.Color.Transparent;
-            this.aimbotspanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimbotspanel.BorderColor = System.Drawing.Color.Yellow;
             this.aimbotspanel.BorderRadius = 8;
             this.aimbotspanel.BorderThickness = 2;
             this.aimbotspanel.Controls.Add(this.label1);
@@ -888,7 +894,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(326, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 16);
@@ -897,7 +903,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel1.BorderRadius = 8;
             this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.label27);
@@ -1018,9 +1024,9 @@
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(14, 120);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 18);
+            this.label10.Size = new System.Drawing.Size(127, 18);
             this.label10.TabIndex = 54;
-            this.label10.Text = "Aimbot Drag Key";
+            this.label10.Text = "Aimbot Legit Key";
             // 
             // aimdragkey
             // 
@@ -1032,7 +1038,7 @@
             this.aimdragkey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.aimdragkey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.aimdragkey.FillColor = System.Drawing.Color.Transparent;
-            this.aimdragkey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aimdragkey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.aimdragkey.ForeColor = System.Drawing.Color.Gray;
             this.aimdragkey.Location = new System.Drawing.Point(189, 120);
             this.aimdragkey.Name = "aimdragkey";
@@ -1109,7 +1115,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label3.ForeColor = System.Drawing.Color.Yellow;
             this.label3.Location = new System.Drawing.Point(26, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
@@ -1119,7 +1125,7 @@
             // 
             // aimfunctions
             // 
-            this.aimfunctions.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimfunctions.BorderColor = System.Drawing.Color.Yellow;
             this.aimfunctions.BorderRadius = 8;
             this.aimfunctions.BorderThickness = 2;
             this.aimfunctions.Controls.Add(this.label83);
@@ -1162,7 +1168,7 @@
             this.aimfov.BackColor = System.Drawing.Color.Transparent;
             this.aimfov.CheckedState.BorderRadius = 2;
             this.aimfov.CheckedState.BorderThickness = 0;
-            this.aimfov.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimfov.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.aimfov.Location = new System.Drawing.Point(241, 260);
             this.aimfov.Name = "aimfov";
             this.aimfov.Size = new System.Drawing.Size(20, 20);
@@ -1210,7 +1216,7 @@
             this.aimbody.BackColor = System.Drawing.Color.Transparent;
             this.aimbody.CheckedState.BorderRadius = 2;
             this.aimbody.CheckedState.BorderThickness = 0;
-            this.aimbody.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimbody.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.aimbody.Location = new System.Drawing.Point(242, 213);
             this.aimbody.Name = "aimbody";
             this.aimbody.Size = new System.Drawing.Size(20, 20);
@@ -1258,7 +1264,7 @@
             this.ainneck.BackColor = System.Drawing.Color.Transparent;
             this.ainneck.CheckedState.BorderRadius = 2;
             this.ainneck.CheckedState.BorderThickness = 0;
-            this.ainneck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ainneck.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.ainneck.Location = new System.Drawing.Point(241, 166);
             this.ainneck.Name = "ainneck";
             this.ainneck.Size = new System.Drawing.Size(20, 20);
@@ -1277,9 +1283,9 @@
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(11, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 18);
+            this.label5.Size = new System.Drawing.Size(96, 18);
             this.label5.TabIndex = 54;
-            this.label5.Text = "Aimbot Drag";
+            this.label5.Text = "Aimbot Legit";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // aimdragload
@@ -1306,7 +1312,7 @@
             this.aimdrag.BackColor = System.Drawing.Color.Transparent;
             this.aimdrag.CheckedState.BorderRadius = 2;
             this.aimdrag.CheckedState.BorderThickness = 0;
-            this.aimdrag.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimdrag.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.aimdrag.Location = new System.Drawing.Point(242, 119);
             this.aimdrag.Name = "aimdrag";
             this.aimdrag.Size = new System.Drawing.Size(20, 20);
@@ -1354,7 +1360,7 @@
             this.aimexv2.BackColor = System.Drawing.Color.Transparent;
             this.aimexv2.CheckedState.BorderRadius = 2;
             this.aimexv2.CheckedState.BorderThickness = 0;
-            this.aimexv2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimexv2.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.aimexv2.Location = new System.Drawing.Point(242, 72);
             this.aimexv2.Name = "aimexv2";
             this.aimexv2.Size = new System.Drawing.Size(20, 20);
@@ -1402,7 +1408,7 @@
             this.aimbotexternal.BackColor = System.Drawing.Color.Transparent;
             this.aimbotexternal.CheckedState.BorderRadius = 2;
             this.aimbotexternal.CheckedState.BorderThickness = 0;
-            this.aimbotexternal.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.aimbotexternal.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.aimbotexternal.Location = new System.Drawing.Point(242, 25);
             this.aimbotexternal.Name = "aimbotexternal";
             this.aimbotexternal.Size = new System.Drawing.Size(20, 20);
@@ -1422,7 +1428,7 @@
             // settingspanel
             // 
             this.settingspanel.BackColor = System.Drawing.Color.Transparent;
-            this.settingspanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.settingspanel.BorderColor = System.Drawing.Color.Yellow;
             this.settingspanel.BorderRadius = 8;
             this.settingspanel.BorderThickness = 2;
             this.settingspanel.Controls.Add(this.label32);
@@ -1441,7 +1447,7 @@
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label32.ForeColor = System.Drawing.Color.Yellow;
             this.label32.Location = new System.Drawing.Point(331, 21);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(127, 16);
@@ -1450,7 +1456,7 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel2.BorderRadius = 8;
             this.guna2Panel2.BorderThickness = 2;
             this.guna2Panel2.Controls.Add(this.buybtn);
@@ -1467,6 +1473,7 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(269, 391);
             this.guna2Panel2.TabIndex = 68;
+            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // buybtn
             // 
@@ -1532,8 +1539,8 @@
             this.proccessmode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.proccessmode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.proccessmode.FillColor = System.Drawing.Color.Transparent;
-            this.proccessmode.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.proccessmode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.proccessmode.FocusedColor = System.Drawing.Color.Yellow;
+            this.proccessmode.FocusedState.BorderColor = System.Drawing.Color.Yellow;
             this.proccessmode.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.proccessmode.ForeColor = System.Drawing.Color.Gray;
             this.proccessmode.ItemHeight = 30;
@@ -1547,7 +1554,7 @@
             this.proccessmode.ItemsAppearance.BackColor = System.Drawing.Color.Black;
             this.proccessmode.ItemsAppearance.ForeColor = System.Drawing.Color.White;
             this.proccessmode.ItemsAppearance.SelectedBackColor = System.Drawing.Color.Black;
-            this.proccessmode.ItemsAppearance.SelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.proccessmode.ItemsAppearance.SelectedForeColor = System.Drawing.Color.Yellow;
             this.proccessmode.Location = new System.Drawing.Point(20, 149);
             this.proccessmode.Name = "proccessmode";
             this.proccessmode.Size = new System.Drawing.Size(218, 36);
@@ -1574,7 +1581,7 @@
             this.panelicon.CausesValidation = false;
             this.panelicon.CheckedState.BorderRadius = 2;
             this.panelicon.CheckedState.BorderThickness = 0;
-            this.panelicon.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelicon.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.panelicon.Location = new System.Drawing.Point(212, 70);
             this.panelicon.Name = "panelicon";
             this.panelicon.Size = new System.Drawing.Size(20, 20);
@@ -1603,7 +1610,7 @@
             this.particlesonoff.CausesValidation = false;
             this.particlesonoff.CheckedState.BorderRadius = 2;
             this.particlesonoff.CheckedState.BorderThickness = 0;
-            this.particlesonoff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.particlesonoff.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.particlesonoff.Location = new System.Drawing.Point(212, 25);
             this.particlesonoff.Name = "particlesonoff";
             this.particlesonoff.Size = new System.Drawing.Size(20, 20);
@@ -1651,7 +1658,7 @@
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label35.ForeColor = System.Drawing.Color.Yellow;
             this.label35.Location = new System.Drawing.Point(26, 20);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(113, 16);
@@ -1661,7 +1668,7 @@
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel4.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel4.BorderRadius = 8;
             this.guna2Panel4.BorderThickness = 2;
             this.guna2Panel4.Controls.Add(this.clearall);
@@ -1744,7 +1751,7 @@
             this.disablefps.BackColor = System.Drawing.Color.Transparent;
             this.disablefps.CheckedState.BorderRadius = 2;
             this.disablefps.CheckedState.BorderThickness = 0;
-            this.disablefps.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.disablefps.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.disablefps.Location = new System.Drawing.Point(240, 301);
             this.disablefps.Name = "disablefps";
             this.disablefps.Size = new System.Drawing.Size(20, 20);
@@ -1772,7 +1779,7 @@
             this.mutebeep.BackColor = System.Drawing.Color.Transparent;
             this.mutebeep.CheckedState.BorderRadius = 2;
             this.mutebeep.CheckedState.BorderThickness = 0;
-            this.mutebeep.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mutebeep.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.mutebeep.Location = new System.Drawing.Point(240, 255);
             this.mutebeep.Name = "mutebeep";
             this.mutebeep.Size = new System.Drawing.Size(20, 20);
@@ -1800,7 +1807,7 @@
             this.taskbar.BackColor = System.Drawing.Color.Transparent;
             this.taskbar.CheckedState.BorderRadius = 2;
             this.taskbar.CheckedState.BorderThickness = 0;
-            this.taskbar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.taskbar.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.taskbar.Location = new System.Drawing.Point(240, 209);
             this.taskbar.Name = "taskbar";
             this.taskbar.Size = new System.Drawing.Size(20, 20);
@@ -1828,7 +1835,7 @@
             this.rpc.BackColor = System.Drawing.Color.Transparent;
             this.rpc.CheckedState.BorderRadius = 2;
             this.rpc.CheckedState.BorderThickness = 0;
-            this.rpc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rpc.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.rpc.Location = new System.Drawing.Point(240, 163);
             this.rpc.Name = "rpc";
             this.rpc.Size = new System.Drawing.Size(20, 20);
@@ -1856,7 +1863,7 @@
             this.streamerMode.BackColor = System.Drawing.Color.Transparent;
             this.streamerMode.CheckedState.BorderRadius = 2;
             this.streamerMode.CheckedState.BorderThickness = 0;
-            this.streamerMode.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.streamerMode.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.streamerMode.Location = new System.Drawing.Point(240, 117);
             this.streamerMode.Name = "streamerMode";
             this.streamerMode.Size = new System.Drawing.Size(20, 20);
@@ -1884,7 +1891,7 @@
             this.disablenot.BackColor = System.Drawing.Color.Transparent;
             this.disablenot.CheckedState.BorderRadius = 2;
             this.disablenot.CheckedState.BorderThickness = 0;
-            this.disablenot.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.disablenot.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.disablenot.Location = new System.Drawing.Point(240, 71);
             this.disablenot.Name = "disablenot";
             this.disablenot.Size = new System.Drawing.Size(20, 20);
@@ -1913,7 +1920,7 @@
             this.internet.CausesValidation = false;
             this.internet.CheckedState.BorderRadius = 2;
             this.internet.CheckedState.BorderThickness = 0;
-            this.internet.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.internet.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.internet.Location = new System.Drawing.Point(240, 25);
             this.internet.Name = "internet";
             this.internet.Size = new System.Drawing.Size(20, 20);
@@ -1927,7 +1934,7 @@
             // miscpanel
             // 
             this.miscpanel.BackColor = System.Drawing.Color.Transparent;
-            this.miscpanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.miscpanel.BorderColor = System.Drawing.Color.Yellow;
             this.miscpanel.BorderRadius = 8;
             this.miscpanel.BorderThickness = 2;
             this.miscpanel.Controls.Add(this.label33);
@@ -1945,7 +1952,7 @@
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label33.ForeColor = System.Drawing.Color.Yellow;
             this.label33.Location = new System.Drawing.Point(328, 19);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(88, 16);
@@ -1954,7 +1961,7 @@
             // 
             // guna2Panel5
             // 
-            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel5.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel5.BorderRadius = 8;
             this.guna2Panel5.BorderThickness = 2;
             this.guna2Panel5.Controls.Add(this.label34);
@@ -1964,7 +1971,7 @@
             this.guna2Panel5.Controls.Add(this.label43);
             this.guna2Panel5.Controls.Add(this.camerakey);
             this.guna2Panel5.Controls.Add(this.label44);
-            this.guna2Panel5.Controls.Add(this.guna2Button5);
+            this.guna2Panel5.Controls.Add(this.ghostkey);
             this.guna2Panel5.Controls.Add(this.label45);
             this.guna2Panel5.Controls.Add(this.WallKey);
             this.guna2Panel5.Controls.Add(this.label46);
@@ -2045,9 +2052,9 @@
             this.label43.ForeColor = System.Drawing.Color.Gray;
             this.label43.Location = new System.Drawing.Point(19, 144);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(135, 18);
+            this.label43.Size = new System.Drawing.Size(125, 18);
             this.label43.TabIndex = 57;
-            this.label43.Text = "Camera Right Key";
+            this.label43.Text = "Camera Left Key";
             this.label43.Click += new System.EventHandler(this.label43_Click);
             // 
             // camerakey
@@ -2077,29 +2084,29 @@
             this.label44.ForeColor = System.Drawing.Color.Gray;
             this.label44.Location = new System.Drawing.Point(19, 103);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(113, 18);
+            this.label44.Size = new System.Drawing.Size(121, 18);
             this.label44.TabIndex = 54;
-            this.label44.Text = "Glitch Fire Key";
+            this.label44.Text = "Ghost Hack Key";
             this.label44.Click += new System.EventHandler(this.label44_Click);
             // 
-            // guna2Button5
+            // ghostkey
             // 
-            this.guna2Button5.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button5.BorderRadius = 2;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2Button5.Location = new System.Drawing.Point(190, 103);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(60, 19);
-            this.guna2Button5.TabIndex = 56;
-            this.guna2Button5.Text = "None";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            this.ghostkey.BorderColor = System.Drawing.Color.Gray;
+            this.ghostkey.BorderRadius = 2;
+            this.ghostkey.BorderThickness = 1;
+            this.ghostkey.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ghostkey.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ghostkey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ghostkey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ghostkey.FillColor = System.Drawing.Color.Transparent;
+            this.ghostkey.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ghostkey.ForeColor = System.Drawing.Color.Gray;
+            this.ghostkey.Location = new System.Drawing.Point(190, 103);
+            this.ghostkey.Name = "ghostkey";
+            this.ghostkey.Size = new System.Drawing.Size(60, 19);
+            this.ghostkey.TabIndex = 56;
+            this.ghostkey.Text = "None";
+            this.ghostkey.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // label45
             // 
@@ -2131,6 +2138,7 @@
             this.WallKey.Size = new System.Drawing.Size(60, 19);
             this.WallKey.TabIndex = 53;
             this.WallKey.Text = "None";
+            this.WallKey.Click += new System.EventHandler(this.WallKey_Click);
             // 
             // label46
             // 
@@ -2162,13 +2170,14 @@
             this.speedKey.Size = new System.Drawing.Size(60, 19);
             this.speedKey.TabIndex = 50;
             this.speedKey.Text = "None";
+            this.speedKey.Click += new System.EventHandler(this.speedKey_Click);
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Transparent;
             this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label47.ForeColor = System.Drawing.Color.Yellow;
             this.label47.Location = new System.Drawing.Point(26, 20);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(100, 16);
@@ -2177,7 +2186,7 @@
             // 
             // guna2Panel6
             // 
-            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel6.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel6.BorderRadius = 8;
             this.guna2Panel6.BorderThickness = 2;
             this.guna2Panel6.Controls.Add(this.label58);
@@ -2244,7 +2253,7 @@
             this.norecoil.BackColor = System.Drawing.Color.Transparent;
             this.norecoil.CheckedState.BorderRadius = 2;
             this.norecoil.CheckedState.BorderThickness = 0;
-            this.norecoil.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.norecoil.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.norecoil.Location = new System.Drawing.Point(246, 177);
             this.norecoil.Name = "norecoil";
             this.norecoil.Size = new System.Drawing.Size(20, 20);
@@ -2272,7 +2281,7 @@
             this.bypassemulator.BackColor = System.Drawing.Color.Transparent;
             this.bypassemulator.CheckedState.BorderRadius = 2;
             this.bypassemulator.CheckedState.BorderThickness = 0;
-            this.bypassemulator.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bypassemulator.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.bypassemulator.Location = new System.Drawing.Point(246, 329);
             this.bypassemulator.Name = "bypassemulator";
             this.bypassemulator.Size = new System.Drawing.Size(20, 20);
@@ -2307,7 +2316,7 @@
             this.loadcamera.FillColor = System.Drawing.Color.Transparent;
             this.loadcamera.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.loadcamera.ForeColor = System.Drawing.Color.Gray;
-            this.loadcamera.Location = new System.Drawing.Point(162, 139);
+            this.loadcamera.Location = new System.Drawing.Point(162, 142);
             this.loadcamera.Name = "loadcamera";
             this.loadcamera.Size = new System.Drawing.Size(60, 19);
             this.loadcamera.TabIndex = 69;
@@ -2319,7 +2328,7 @@
             this.guna2CustomCheckBox7.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomCheckBox7.CheckedState.BorderRadius = 2;
             this.guna2CustomCheckBox7.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox7.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2CustomCheckBox7.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.guna2CustomCheckBox7.Location = new System.Drawing.Point(246, 291);
             this.guna2CustomCheckBox7.Name = "guna2CustomCheckBox7";
             this.guna2CustomCheckBox7.Size = new System.Drawing.Size(20, 20);
@@ -2353,7 +2362,7 @@
             this.loadglitch.FillColor = System.Drawing.Color.Transparent;
             this.loadglitch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.loadglitch.ForeColor = System.Drawing.Color.Gray;
-            this.loadglitch.Location = new System.Drawing.Point(162, 101);
+            this.loadglitch.Location = new System.Drawing.Point(162, 104);
             this.loadglitch.Name = "loadglitch";
             this.loadglitch.Size = new System.Drawing.Size(60, 19);
             this.loadglitch.TabIndex = 66;
@@ -2365,7 +2374,7 @@
             this.guna2CustomCheckBox6.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomCheckBox6.CheckedState.BorderRadius = 2;
             this.guna2CustomCheckBox6.CheckedState.BorderThickness = 0;
-            this.guna2CustomCheckBox6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2CustomCheckBox6.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.guna2CustomCheckBox6.Location = new System.Drawing.Point(246, 253);
             this.guna2CustomCheckBox6.Name = "guna2CustomCheckBox6";
             this.guna2CustomCheckBox6.Size = new System.Drawing.Size(20, 20);
@@ -2411,7 +2420,7 @@
             this.fixfemale.BackColor = System.Drawing.Color.Transparent;
             this.fixfemale.CheckedState.BorderRadius = 2;
             this.fixfemale.CheckedState.BorderThickness = 0;
-            this.fixfemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.fixfemale.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.fixfemale.Location = new System.Drawing.Point(246, 215);
             this.fixfemale.Name = "fixfemale";
             this.fixfemale.Size = new System.Drawing.Size(20, 20);
@@ -2430,17 +2439,17 @@
             this.label49.ForeColor = System.Drawing.Color.Gray;
             this.label49.Location = new System.Drawing.Point(11, 142);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(104, 18);
+            this.label49.Size = new System.Drawing.Size(94, 18);
             this.label49.TabIndex = 57;
-            this.label49.Text = "Camera Right";
+            this.label49.Text = "Camera Left";
             // 
             // camera
             // 
             this.camera.BackColor = System.Drawing.Color.Transparent;
             this.camera.CheckedState.BorderRadius = 2;
             this.camera.CheckedState.BorderThickness = 0;
-            this.camera.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.camera.Location = new System.Drawing.Point(246, 139);
+            this.camera.CheckedState.FillColor = System.Drawing.Color.Yellow;
+            this.camera.Location = new System.Drawing.Point(246, 141);
             this.camera.Name = "camera";
             this.camera.Size = new System.Drawing.Size(20, 20);
             this.camera.TabIndex = 58;
@@ -2458,9 +2467,9 @@
             this.label50.ForeColor = System.Drawing.Color.Gray;
             this.label50.Location = new System.Drawing.Point(11, 104);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(82, 18);
+            this.label50.Size = new System.Drawing.Size(90, 18);
             this.label50.TabIndex = 54;
-            this.label50.Text = "Glitch Fire";
+            this.label50.Text = "Ghost Hack";
             this.label50.Click += new System.EventHandler(this.label50_Click);
             // 
             // glitch
@@ -2468,8 +2477,8 @@
             this.glitch.BackColor = System.Drawing.Color.Transparent;
             this.glitch.CheckedState.BorderRadius = 2;
             this.glitch.CheckedState.BorderThickness = 0;
-            this.glitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.glitch.Location = new System.Drawing.Point(246, 101);
+            this.glitch.CheckedState.FillColor = System.Drawing.Color.Yellow;
+            this.glitch.Location = new System.Drawing.Point(246, 103);
             this.glitch.Name = "glitch";
             this.glitch.Size = new System.Drawing.Size(20, 20);
             this.glitch.TabIndex = 55;
@@ -2487,9 +2496,9 @@
             this.label51.ForeColor = System.Drawing.Color.Gray;
             this.label51.Location = new System.Drawing.Point(11, 66);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(96, 18);
+            this.label51.Size = new System.Drawing.Size(75, 18);
             this.label51.TabIndex = 51;
-            this.label51.Text = "Wall Hack V2";
+            this.label51.Text = "Wall Hack";
             this.label51.Click += new System.EventHandler(this.label51_Click);
             // 
             // wallhack
@@ -2497,7 +2506,7 @@
             this.wallhack.BackColor = System.Drawing.Color.Transparent;
             this.wallhack.CheckedState.BorderRadius = 2;
             this.wallhack.CheckedState.BorderThickness = 0;
-            this.wallhack.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.wallhack.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.wallhack.Location = new System.Drawing.Point(246, 63);
             this.wallhack.Name = "wallhack";
             this.wallhack.Size = new System.Drawing.Size(20, 20);
@@ -2525,7 +2534,7 @@
             this.speedhack.BackColor = System.Drawing.Color.Transparent;
             this.speedhack.CheckedState.BorderRadius = 2;
             this.speedhack.CheckedState.BorderThickness = 0;
-            this.speedhack.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.speedhack.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.speedhack.Location = new System.Drawing.Point(246, 25);
             this.speedhack.Name = "speedhack";
             this.speedhack.Size = new System.Drawing.Size(20, 20);
@@ -2539,7 +2548,7 @@
             // sniperpan
             // 
             this.sniperpan.BackColor = System.Drawing.Color.Transparent;
-            this.sniperpan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.sniperpan.BorderColor = System.Drawing.Color.Yellow;
             this.sniperpan.BorderRadius = 8;
             this.sniperpan.BorderThickness = 2;
             this.sniperpan.Controls.Add(this.label55);
@@ -2558,7 +2567,7 @@
             this.label55.AutoSize = true;
             this.label55.BackColor = System.Drawing.Color.Transparent;
             this.label55.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label55.ForeColor = System.Drawing.Color.Yellow;
             this.label55.Location = new System.Drawing.Point(326, 19);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(102, 16);
@@ -2567,7 +2576,7 @@
             // 
             // guna2Panel7
             // 
-            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel7.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel7.BorderRadius = 8;
             this.guna2Panel7.BorderThickness = 2;
             this.guna2Panel7.Controls.Add(this.label59);
@@ -2746,7 +2755,7 @@
             this.label62.AutoSize = true;
             this.label62.BackColor = System.Drawing.Color.Transparent;
             this.label62.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label62.ForeColor = System.Drawing.Color.Yellow;
             this.label62.Location = new System.Drawing.Point(26, 20);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(114, 16);
@@ -2755,7 +2764,7 @@
             // 
             // guna2Panel8
             // 
-            this.guna2Panel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel8.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel8.BorderRadius = 8;
             this.guna2Panel8.BorderThickness = 2;
             this.guna2Panel8.Controls.Add(this.label82);
@@ -2786,9 +2795,9 @@
             this.label82.ForeColor = System.Drawing.Color.Gray;
             this.label82.Location = new System.Drawing.Point(12, 261);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(97, 18);
+            this.label82.Size = new System.Drawing.Size(120, 18);
             this.label82.TabIndex = 63;
-            this.label82.Text = "Sniper Zoom";
+            this.label82.Text = "Sniper Tracking";
             // 
             // loadsniperzoom
             // 
@@ -2814,7 +2823,7 @@
             this.sniperzoom.BackColor = System.Drawing.Color.Transparent;
             this.sniperzoom.CheckedState.BorderRadius = 2;
             this.sniperzoom.CheckedState.BorderThickness = 0;
-            this.sniperzoom.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.sniperzoom.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.sniperzoom.Location = new System.Drawing.Point(241, 260);
             this.sniperzoom.Name = "sniperzoom";
             this.sniperzoom.Size = new System.Drawing.Size(20, 20);
@@ -2833,9 +2842,9 @@
             this.label63.ForeColor = System.Drawing.Color.Gray;
             this.label63.Location = new System.Drawing.Point(12, 214);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(113, 18);
+            this.label63.Size = new System.Drawing.Size(127, 18);
             this.label63.TabIndex = 60;
-            this.label63.Text = "M82B Location";
+            this.label63.Text = "All Sniper Switch";
             // 
             // M82Blocationload
             // 
@@ -2849,7 +2858,7 @@
             this.M82Blocationload.FillColor = System.Drawing.Color.Transparent;
             this.M82Blocationload.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.M82Blocationload.ForeColor = System.Drawing.Color.Gray;
-            this.M82Blocationload.Location = new System.Drawing.Point(163, 218);
+            this.M82Blocationload.Location = new System.Drawing.Point(163, 214);
             this.M82Blocationload.Name = "M82Blocationload";
             this.M82Blocationload.Size = new System.Drawing.Size(60, 19);
             this.M82Blocationload.TabIndex = 62;
@@ -2861,7 +2870,7 @@
             this.M82Blocation.BackColor = System.Drawing.Color.Transparent;
             this.M82Blocation.CheckedState.BorderRadius = 2;
             this.M82Blocation.CheckedState.BorderThickness = 0;
-            this.M82Blocation.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.M82Blocation.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.M82Blocation.Location = new System.Drawing.Point(242, 213);
             this.M82Blocation.Name = "M82Blocation";
             this.M82Blocation.Size = new System.Drawing.Size(20, 20);
@@ -2889,7 +2898,7 @@
             this.M82Bswitch.BackColor = System.Drawing.Color.Transparent;
             this.M82Bswitch.CheckedState.BorderRadius = 2;
             this.M82Bswitch.CheckedState.BorderThickness = 0;
-            this.M82Bswitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.M82Bswitch.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.M82Bswitch.Location = new System.Drawing.Point(242, 166);
             this.M82Bswitch.Name = "M82Bswitch";
             this.M82Bswitch.Size = new System.Drawing.Size(20, 20);
@@ -2917,7 +2926,7 @@
             this.sniperdelay.BackColor = System.Drawing.Color.Transparent;
             this.sniperdelay.CheckedState.BorderRadius = 2;
             this.sniperdelay.CheckedState.BorderThickness = 0;
-            this.sniperdelay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.sniperdelay.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.sniperdelay.Location = new System.Drawing.Point(242, 119);
             this.sniperdelay.Name = "sniperdelay";
             this.sniperdelay.Size = new System.Drawing.Size(20, 20);
@@ -2945,7 +2954,7 @@
             this.ss.BackColor = System.Drawing.Color.Transparent;
             this.ss.CheckedState.BorderRadius = 2;
             this.ss.CheckedState.BorderThickness = 0;
-            this.ss.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ss.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.ss.Location = new System.Drawing.Point(242, 72);
             this.ss.Name = "ss";
             this.ss.Size = new System.Drawing.Size(20, 20);
@@ -2992,7 +3001,7 @@
             this.ssc.BackColor = System.Drawing.Color.Transparent;
             this.ssc.CheckedState.BorderRadius = 2;
             this.ssc.CheckedState.BorderThickness = 0;
-            this.ssc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ssc.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.ssc.Location = new System.Drawing.Point(242, 25);
             this.ssc.Name = "ssc";
             this.ssc.Size = new System.Drawing.Size(20, 20);
@@ -3006,7 +3015,7 @@
             // visualspanel
             // 
             this.visualspanel.BackColor = System.Drawing.Color.Transparent;
-            this.visualspanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.visualspanel.BorderColor = System.Drawing.Color.Yellow;
             this.visualspanel.BorderRadius = 8;
             this.visualspanel.BorderThickness = 2;
             this.visualspanel.Controls.Add(this.chamshooking);
@@ -3045,7 +3054,7 @@
             this.label74.AutoSize = true;
             this.label74.BackColor = System.Drawing.Color.Transparent;
             this.label74.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label74.ForeColor = System.Drawing.Color.Yellow;
             this.label74.Location = new System.Drawing.Point(323, 20);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(132, 16);
@@ -3054,7 +3063,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel3.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel3.BorderRadius = 8;
             this.guna2Panel3.BorderThickness = 2;
             this.guna2Panel3.Controls.Add(this.label81);
@@ -3087,7 +3096,7 @@
             this.crsaqua.BackColor = System.Drawing.Color.Transparent;
             this.crsaqua.CheckedState.BorderRadius = 2;
             this.crsaqua.CheckedState.BorderThickness = 0;
-            this.crsaqua.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.crsaqua.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.crsaqua.Location = new System.Drawing.Point(247, 137);
             this.crsaqua.Name = "crsaqua";
             this.crsaqua.Size = new System.Drawing.Size(20, 20);
@@ -3114,7 +3123,7 @@
             this.crspurple.BackColor = System.Drawing.Color.Transparent;
             this.crspurple.CheckedState.BorderRadius = 2;
             this.crspurple.CheckedState.BorderThickness = 0;
-            this.crspurple.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.crspurple.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.crspurple.Location = new System.Drawing.Point(246, 99);
             this.crspurple.Name = "crspurple";
             this.crspurple.Size = new System.Drawing.Size(20, 20);
@@ -3142,7 +3151,7 @@
             this.crsred.BackColor = System.Drawing.Color.Transparent;
             this.crsred.CheckedState.BorderRadius = 2;
             this.crsred.CheckedState.BorderThickness = 0;
-            this.crsred.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.crsred.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.crsred.Location = new System.Drawing.Point(246, 61);
             this.crsred.Name = "crsred";
             this.crsred.Size = new System.Drawing.Size(20, 20);
@@ -3169,7 +3178,7 @@
             this.crsgold.BackColor = System.Drawing.Color.Transparent;
             this.crsgold.CheckedState.BorderRadius = 2;
             this.crsgold.CheckedState.BorderThickness = 0;
-            this.crsgold.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.crsgold.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.crsgold.Location = new System.Drawing.Point(246, 23);
             this.crsgold.Name = "crsgold";
             this.crsgold.Size = new System.Drawing.Size(20, 20);
@@ -3184,7 +3193,7 @@
             this.label75.AutoSize = true;
             this.label75.BackColor = System.Drawing.Color.Transparent;
             this.label75.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label75.ForeColor = System.Drawing.Color.Yellow;
             this.label75.Location = new System.Drawing.Point(26, 20);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(115, 16);
@@ -3193,7 +3202,7 @@
             // 
             // guna2Panel10
             // 
-            this.guna2Panel10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Panel10.BorderColor = System.Drawing.Color.Yellow;
             this.guna2Panel10.BorderRadius = 8;
             this.guna2Panel10.BorderThickness = 2;
             this.guna2Panel10.Controls.Add(this.label73);
@@ -3239,7 +3248,7 @@
             this.chamsmoco.BackColor = System.Drawing.Color.Transparent;
             this.chamsmoco.CheckedState.BorderRadius = 2;
             this.chamsmoco.CheckedState.BorderThickness = 0;
-            this.chamsmoco.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.chamsmoco.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.chamsmoco.Location = new System.Drawing.Point(246, 356);
             this.chamsmoco.Name = "chamsmoco";
             this.chamsmoco.Size = new System.Drawing.Size(20, 20);
@@ -3267,7 +3276,7 @@
             this.bluebox.BackColor = System.Drawing.Color.Transparent;
             this.bluebox.CheckedState.BorderRadius = 2;
             this.bluebox.CheckedState.BorderThickness = 0;
-            this.bluebox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bluebox.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.bluebox.Location = new System.Drawing.Point(246, 319);
             this.bluebox.Name = "bluebox";
             this.bluebox.Size = new System.Drawing.Size(20, 20);
@@ -3295,7 +3304,7 @@
             this.redchams.BackColor = System.Drawing.Color.Transparent;
             this.redchams.CheckedState.BorderRadius = 2;
             this.redchams.CheckedState.BorderThickness = 0;
-            this.redchams.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.redchams.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.redchams.Location = new System.Drawing.Point(246, 282);
             this.redchams.Name = "redchams";
             this.redchams.Size = new System.Drawing.Size(20, 20);
@@ -3323,7 +3332,7 @@
             this.rgbbox.BackColor = System.Drawing.Color.Transparent;
             this.rgbbox.CheckedState.BorderRadius = 2;
             this.rgbbox.CheckedState.BorderThickness = 0;
-            this.rgbbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.rgbbox.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.rgbbox.Location = new System.Drawing.Point(246, 245);
             this.rgbbox.Name = "rgbbox";
             this.rgbbox.Size = new System.Drawing.Size(20, 20);
@@ -3342,16 +3351,16 @@
             this.label69.ForeColor = System.Drawing.Color.Gray;
             this.label69.Location = new System.Drawing.Point(17, 209);
             this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(98, 18);
+            this.label69.Size = new System.Drawing.Size(117, 18);
             this.label69.TabIndex = 62;
-            this.label69.Text = "Red Antenna";
+            this.label69.Text = "2D Transparent";
             // 
             // redantenna
             // 
             this.redantenna.BackColor = System.Drawing.Color.Transparent;
             this.redantenna.CheckedState.BorderRadius = 2;
             this.redantenna.CheckedState.BorderThickness = 0;
-            this.redantenna.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.redantenna.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.redantenna.Location = new System.Drawing.Point(246, 208);
             this.redantenna.Name = "redantenna";
             this.redantenna.Size = new System.Drawing.Size(20, 20);
@@ -3379,7 +3388,7 @@
             this.chams3d.BackColor = System.Drawing.Color.Transparent;
             this.chams3d.CheckedState.BorderRadius = 2;
             this.chams3d.CheckedState.BorderThickness = 0;
-            this.chams3d.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.chams3d.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.chams3d.Location = new System.Drawing.Point(246, 171);
             this.chams3d.Name = "chams3d";
             this.chams3d.Size = new System.Drawing.Size(20, 20);
@@ -3407,7 +3416,7 @@
             this.cmenuoverlayv2.BackColor = System.Drawing.Color.Transparent;
             this.cmenuoverlayv2.CheckedState.BorderRadius = 2;
             this.cmenuoverlayv2.CheckedState.BorderThickness = 0;
-            this.cmenuoverlayv2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmenuoverlayv2.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.cmenuoverlayv2.Location = new System.Drawing.Point(246, 134);
             this.cmenuoverlayv2.Name = "cmenuoverlayv2";
             this.cmenuoverlayv2.Size = new System.Drawing.Size(20, 20);
@@ -3435,7 +3444,7 @@
             this.cmenuoverlayv1.BackColor = System.Drawing.Color.Transparent;
             this.cmenuoverlayv1.CheckedState.BorderRadius = 2;
             this.cmenuoverlayv1.CheckedState.BorderThickness = 0;
-            this.cmenuoverlayv1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmenuoverlayv1.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.cmenuoverlayv1.Location = new System.Drawing.Point(246, 97);
             this.cmenuoverlayv1.Name = "cmenuoverlayv1";
             this.cmenuoverlayv1.Size = new System.Drawing.Size(20, 20);
@@ -3463,7 +3472,7 @@
             this.cmenunormalv2.BackColor = System.Drawing.Color.Transparent;
             this.cmenunormalv2.CheckedState.BorderRadius = 2;
             this.cmenunormalv2.CheckedState.BorderThickness = 0;
-            this.cmenunormalv2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmenunormalv2.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.cmenunormalv2.Location = new System.Drawing.Point(246, 60);
             this.cmenunormalv2.Name = "cmenunormalv2";
             this.cmenunormalv2.Size = new System.Drawing.Size(20, 20);
@@ -3491,7 +3500,7 @@
             this.cmenunormal.BackColor = System.Drawing.Color.Transparent;
             this.cmenunormal.CheckedState.BorderRadius = 2;
             this.cmenunormal.CheckedState.BorderThickness = 0;
-            this.cmenunormal.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmenunormal.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.cmenunormal.Location = new System.Drawing.Point(246, 23);
             this.cmenunormal.Name = "cmenunormal";
             this.cmenunormal.Size = new System.Drawing.Size(20, 20);
@@ -3515,12 +3524,12 @@
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.loginLogotext);
-            this.Controls.Add(this.miscpanel);
             this.Controls.Add(this.visualspanel);
             this.Controls.Add(this.sniperpan);
             this.Controls.Add(this.aimbotspanel);
             this.Controls.Add(this.homepan);
             this.Controls.Add(this.settingspanel);
+            this.Controls.Add(this.miscpanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3528,7 +3537,9 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOME";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HOME_FormClosing);
             this.Load += new System.EventHandler(this.HOME_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.HOME_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HOME_KeyDown);
             this.navigationspanel.ResumeLayout(false);
             this.infopanel.ResumeLayout(false);
@@ -3690,7 +3701,7 @@
         private System.Windows.Forms.Label label43;
         private Guna.UI2.WinForms.Guna2Button camerakey;
         private System.Windows.Forms.Label label44;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button ghostkey;
         private System.Windows.Forms.Label label45;
         private Guna.UI2.WinForms.Guna2Button WallKey;
         private System.Windows.Forms.Label label46;

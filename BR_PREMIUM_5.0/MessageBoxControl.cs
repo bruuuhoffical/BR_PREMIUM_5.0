@@ -18,7 +18,6 @@ namespace BR_PREMIUM_5._0
         private Timer _messageTimer;
         private int _remainingTime;
         private bool _isSlidingIn;
-        private const int DefaultDuration = 5000;
         private const int SlideSpeed = 15;
 
         private double progress = 5;
@@ -187,7 +186,7 @@ namespace BR_PREMIUM_5._0
         {
             switch (status.ToLower())
             {
-                case "cool": return Color.FromArgb(0,192,192);
+                case "cool": return Color.Yellow;
                 case "activating": return Color.Yellow;
                 case "activated": return Color.Green;
                 case "failed": return Color.Red;

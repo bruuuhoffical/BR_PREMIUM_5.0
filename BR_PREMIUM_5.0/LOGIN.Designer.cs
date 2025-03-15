@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
             this.loginLogotext = new System.Windows.Forms.Label();
             this.particleTimer = new System.Windows.Forms.Timer(this.components);
-            this.key = new Guna.UI2.WinForms.Guna2TextBox();
             this.loginbtn = new Guna.UI2.WinForms.Guna2Button();
             this.autofill = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.autofilllabel = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.youtube = new Guna.UI2.WinForms.Guna2ImageButton();
             this.whatsapp = new Guna.UI2.WinForms.Guna2ImageButton();
             this.discord = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.key = new Guna.UI2.WinForms.Guna2TextBox();
             this.password = new Guna.UI2.WinForms.Guna2TextBox();
             this.username = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.loginLogotext.AutoSize = true;
             this.loginLogotext.BackColor = System.Drawing.Color.Transparent;
             this.loginLogotext.Font = new System.Drawing.Font("Nevan RUS", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLogotext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.loginLogotext.ForeColor = System.Drawing.Color.Yellow;
             this.loginLogotext.Location = new System.Drawing.Point(119, 24);
             this.loginLogotext.Name = "loginLogotext";
             this.loginLogotext.Size = new System.Drawing.Size(612, 83);
@@ -66,33 +66,6 @@
             this.particleTimer.Interval = 2;
             this.particleTimer.Tick += new System.EventHandler(this.particleTimer_Tick);
             // 
-            // key
-            // 
-            this.key.Animated = true;
-            this.key.BackColor = System.Drawing.Color.Transparent;
-            this.key.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.key.BorderRadius = 4;
-            this.key.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.key.DefaultText = "";
-            this.key.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.key.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.key.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.key.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.key.FillColor = System.Drawing.Color.Transparent;
-            this.key.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.key.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.key.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.key.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.key.IconRight = global::BR_PREMIUM.Properties.Resources.key;
-            this.key.Location = new System.Drawing.Point(257, 287);
-            this.key.Name = "key";
-            this.key.PasswordChar = '\0';
-            this.key.PlaceholderText = "License";
-            this.key.SelectedText = "";
-            this.key.Size = new System.Drawing.Size(326, 38);
-            this.key.TabIndex = 3;
-            this.key.Enter += new System.EventHandler(this.LOGIN_Enter);
-            // 
             // loginbtn
             // 
             this.loginbtn.Animated = true;
@@ -102,9 +75,9 @@
             this.loginbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.loginbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.loginbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.loginbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.loginbtn.FillColor = System.Drawing.Color.Yellow;
             this.loginbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.loginbtn.ForeColor = System.Drawing.Color.White;
+            this.loginbtn.ForeColor = System.Drawing.Color.DimGray;
             this.loginbtn.Location = new System.Drawing.Point(257, 348);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(326, 38);
@@ -118,7 +91,7 @@
             this.autofill.BackColor = System.Drawing.Color.Transparent;
             this.autofill.CheckedState.BorderRadius = 2;
             this.autofill.CheckedState.BorderThickness = 0;
-            this.autofill.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.autofill.CheckedState.FillColor = System.Drawing.Color.Yellow;
             this.autofill.Location = new System.Drawing.Point(257, 404);
             this.autofill.Name = "autofill";
             this.autofill.Size = new System.Drawing.Size(20, 20);
@@ -177,8 +150,9 @@
             this.loginborderless.DockForm = false;
             this.loginborderless.DockIndicatorTransparencyValue = 0.6D;
             this.loginborderless.DragStartTransparencyValue = 1D;
+            this.loginborderless.HasFormShadow = false;
             this.loginborderless.ResizeForm = false;
-            this.loginborderless.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.loginborderless.ShadowColor = System.Drawing.Color.Yellow;
             this.loginborderless.TransparentWhileDrag = true;
             // 
             // tiktok
@@ -195,6 +169,7 @@
             this.tiktok.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.tiktok.Size = new System.Drawing.Size(37, 32);
             this.tiktok.TabIndex = 8;
+            this.tiktok.Visible = false;
             this.tiktok.Click += new System.EventHandler(this.tiktok_Click);
             // 
             // youtube
@@ -211,6 +186,7 @@
             this.youtube.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.youtube.Size = new System.Drawing.Size(37, 32);
             this.youtube.TabIndex = 7;
+            this.youtube.Visible = false;
             // 
             // whatsapp
             // 
@@ -226,6 +202,7 @@
             this.whatsapp.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.whatsapp.Size = new System.Drawing.Size(37, 32);
             this.whatsapp.TabIndex = 6;
+            this.whatsapp.Visible = false;
             this.whatsapp.Click += new System.EventHandler(this.whatsapp_Click);
             // 
             // discord
@@ -242,13 +219,41 @@
             this.discord.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.discord.Size = new System.Drawing.Size(37, 32);
             this.discord.TabIndex = 5;
+            this.discord.Visible = false;
             this.discord.Click += new System.EventHandler(this.discord_Click);
+            // 
+            // key
+            // 
+            this.key.Animated = true;
+            this.key.BackColor = System.Drawing.Color.Transparent;
+            this.key.BorderColor = System.Drawing.Color.Yellow;
+            this.key.BorderRadius = 4;
+            this.key.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.key.DefaultText = "";
+            this.key.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.key.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.key.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.key.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.key.FillColor = System.Drawing.Color.Transparent;
+            this.key.FocusedState.BorderColor = System.Drawing.Color.Yellow;
+            this.key.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.key.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.key.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.key.IconRight = global::BR_PREMIUM.Properties.Resources.keyyelloe;
+            this.key.Location = new System.Drawing.Point(257, 287);
+            this.key.Name = "key";
+            this.key.PasswordChar = '\0';
+            this.key.PlaceholderText = "License";
+            this.key.SelectedText = "";
+            this.key.Size = new System.Drawing.Size(326, 38);
+            this.key.TabIndex = 3;
+            this.key.Enter += new System.EventHandler(this.LOGIN_Enter);
             // 
             // password
             // 
             this.password.Animated = true;
             this.password.BackColor = System.Drawing.Color.Transparent;
-            this.password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.password.BorderColor = System.Drawing.Color.Yellow;
             this.password.BorderRadius = 4;
             this.password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password.DefaultText = "";
@@ -257,11 +262,11 @@
             this.password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.password.FillColor = System.Drawing.Color.Transparent;
-            this.password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.password.FocusedState.BorderColor = System.Drawing.Color.Yellow;
             this.password.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.password.IconRight = global::BR_PREMIUM.Properties.Resources.padlock;
+            this.password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.password.IconRight = global::BR_PREMIUM.Properties.Resources.padlockyellow;
             this.password.Location = new System.Drawing.Point(257, 236);
             this.password.Name = "password";
             this.password.PasswordChar = '\0';
@@ -275,7 +280,7 @@
             // 
             this.username.Animated = true;
             this.username.BackColor = System.Drawing.Color.Transparent;
-            this.username.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.username.BorderColor = System.Drawing.Color.Yellow;
             this.username.BorderRadius = 4;
             this.username.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username.DefaultText = "";
@@ -284,11 +289,11 @@
             this.username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username.FillColor = System.Drawing.Color.Transparent;
-            this.username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.username.FocusedState.BorderColor = System.Drawing.Color.Yellow;
             this.username.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username.IconRight = ((System.Drawing.Image)(resources.GetObject("username.IconRight")));
+            this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.username.IconRight = global::BR_PREMIUM.Properties.Resources.useryellow;
             this.username.Location = new System.Drawing.Point(257, 185);
             this.username.Name = "username";
             this.username.PasswordChar = '\0';
@@ -327,6 +332,7 @@
             this.Text = "BRUUUH LOGIN";
             this.Load += new System.EventHandler(this.LOGIN_Load);
             this.Click += new System.EventHandler(this.LOGIN_Click);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.LOGIN_Paint);
             this.Enter += new System.EventHandler(this.LOGIN_Enter);
             this.ResumeLayout(false);
             this.PerformLayout();

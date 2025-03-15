@@ -5,8 +5,8 @@ using System.Windows.Forms;
 
 public class ParticleSystem
 {
-    private const int ParticleCount = 50;
-    private const int DrawCount = 40;
+    private const int ParticleCount = 35;
+    private const int DrawCount = 25;
     private readonly Random _random = new Random();
     private readonly PointF[] _particlePositions = new PointF[ParticleCount];
     private readonly PointF[] _particleTargetPositions = new PointF[ParticleCount];
@@ -14,9 +14,9 @@ public class ParticleSystem
     private readonly float[] _particleSizes = new float[ParticleCount];
     private readonly float[] _particleRotations = new float[ParticleCount];
     private int glowIndex;
-    public Color particleColor { get; set; } = Color.FromArgb(0, 192, 192);
+    public Color particleColor { get; set; } = Color.Yellow;
     //public Color particleColor { get; set; } = Color.FromArgb(192, 0, 192);
-    public Color glowColor { get; set; } = Color.FromArgb(0, 192, 192);
+    public Color glowColor { get; set; } = Color.Yellow;
     //public Color glowColor { get; set; } = Color.FromArgb(192, 0, 192);
 
     public ParticleSystem()

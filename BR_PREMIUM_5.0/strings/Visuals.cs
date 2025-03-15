@@ -8,9 +8,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Bruuuh;
-using RedMem;
+using Memory;
 
 namespace BR_PREMIUM_5._0.strings
 {
@@ -34,6 +33,7 @@ namespace BR_PREMIUM_5._0.strings
             _mainForm = mainForm;
 
         }
+
 
 
         #region DLL INJECTION SYSTEM
@@ -323,8 +323,8 @@ namespace BR_PREMIUM_5._0.strings
         public void InjectRedAntenna()
         {
             string processName = "HD-Player";
-            string glew = "BR_PREMIUM.Properties.redant.dll";
-            string glewpath = Path.Combine(Path.GetTempPath(), "redant.dll");
+            string glew = "BR_PREMIUM.Properties.twod.dll";
+            string glewpath = Path.Combine(Path.GetTempPath(), "twod.dll");
 
 
             inject(glew, glewpath);
@@ -511,6 +511,9 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
+
+
+
 
 
 
@@ -1146,16 +1149,6 @@ namespace BR_PREMIUM_5._0.strings
                 _mainForm.ShowMessageBox(message, status, imageKey);
             }));
         }
-        #endregion'
-
-
-        #region .
-        public void LoadAll()
-        {
-            MessageBox.Show("Attention Please Do Not Pay For This Project Its is Free On My GitHub Named BRUUUH", "BRUUUH CHEATS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
         #endregion
-
-
     }
 }

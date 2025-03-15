@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bruuuh;
-using RedMem;
+using Memory;
 
 namespace BR_PREMIUM_5._0.strings
 {
@@ -27,17 +27,19 @@ namespace BR_PREMIUM_5._0.strings
         private HOME _mainForm;
         private List<long> SniperAddresses = new List<long>();
         private List<long> M82BAddress = new List<long>();
-        private List<long> sniperzoomAddress = new List<long>();
+        private List<long> M24Address = new List<long>();
+        private List<long> VSKAddress = new List<long>();
+        private List<long> sniperTrackingAddress = new List<long>();
 
         public Snipers(HOME mainForm)
         {
             _mainForm = mainForm;
 
         }
-        #region SniperScope
+        #region SSC
         public async Task ScanSniperScope()
         {
-            string search = "";
+            string search = "06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01 00";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -70,7 +72,7 @@ namespace BR_PREMIUM_5._0.strings
 
         public void EnableSniperScope()
         {
-            string replace = "";
+            string replace = "06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01 00";
 
             if (SniperAddresses.Count > 0)
             {
@@ -122,7 +124,7 @@ namespace BR_PREMIUM_5._0.strings
         }
         public void ResetSniperScope()
         {
-            string originalPattern = "";
+            string originalPattern = "06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01 00";
 
             if (SniperAddresses.Count > 0)
             {
@@ -178,8 +180,8 @@ namespace BR_PREMIUM_5._0.strings
 
         public async void EnableSniperScope1()
         {
-            string search = "";
-            string replace = "";
+            string search = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
+            string replace = "8C 3F 8F C2 F5 3C CD CC CC 3D 06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -214,11 +216,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region SniperSwitch
+        #region SS
         public async void EnableSniperSwitch()
         {
-            string search = "";
-            string replace = "";
+            string search = "3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F ?? ?? ?? 3F ?? ?? ?? 3F 00 00 80 3F 00 00 00 00 ?? ?? ?? 3F 00 00 80 3F 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00";
+            string replace = "3F 00 00 80 3E EC 51 B8 3D";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -254,8 +256,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableSniperSwitch()
         {
-            string search = "";
-            string replace = "";
+            string search = "3F 00 00 80 3E EC 51 B8 3D";
+            string replace = "3F 00 00 80 3E 00 00 00 00 04 00 00 00 00 00 80 3F 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3F ?? ?? ?? 3F ?? ?? ?? 3F 00 00 80 3F 00 00 00 00 ?? ?? ?? 3F 00 00 80 3F 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 00";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -290,11 +292,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region SniperDelayFix
+        #region SDF
         public async void Enablesdelayfix()
         {
-            string search = "";
-            string replace = "";
+            string search = "EA 00 60 A0 E3 06 00 A0 E1 18 D0 4B E2 02 8B BD EC 70 8C";
+            string replace = "01 00 AF E3";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -330,8 +332,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void Disablesdelayfix()
         {
-            string search = "";
-            string replace = "";
+            string search = "01 00 AF E3";
+            string replace = "EA 00 60 A0 E3 06 00 A0 E1 18 D0 4B E2 02 8B BD EC 70 8C";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -366,11 +368,11 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region M82BSwitch
+        #region M82BS
         public async void EnableM82BSwitch()
         {
-            string search = "";
-            string replace = "";
+            string search = "00 00 00 40 00 00 00 00 00 00 00 40 00 00 80 3f 00 00 80 3f 9a 99 99 3e 00 00 00 00 00 00 5c 43 00 00 28 42 00 00 b4 42 78 00 00 00 00 00 00 00 9a 99 19 3f 00 00 80 3e 00 00 00 00 04 00 00 00 00 00 80 3f 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f cd cc 4c 3f cd cc 8c 3f 00 00 80 3f 00 00 00 00 66";
+            string replace = "00 00 00 40 00 00 00 00 00 00 00 40 00 00 80 3f 00 00 80 3f 9a 99 99 3e 00 00 00 00 00 00 5c 43 00 00 28 42 00 00 b4 42 78 00 00 00 00 00 00 00 9a 99 19 3c 00 00 f5 3c 00 00 00 00 04 00 00 00 00 00 80 3f 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f cd cc 4c 3f cd cc 8c 3f 00 00 80 3f 00 00 00 00 66";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -406,8 +408,8 @@ namespace BR_PREMIUM_5._0.strings
         }
         public async void DisableM82BSwitch()
         {
-            string search = "";
-            string replace = "";
+            string search = "00 00 00 40 00 00 00 00 00 00 00 40 00 00 80 3f 00 00 80 3f 9a 99 99 3e 00 00 00 00 00 00 5c 43 00 00 28 42 00 00 b4 42 78 00 00 00 00 00 00 00 9a 99 19 3c 00 00 f5 3c 00 00 00 00 04 00 00 00 00 00 80 3f 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f cd cc 4c 3f cd cc 8c 3f 00 00 80 3f 00 00 00 00 66";
+            string replace = "00 00 00 40 00 00 00 00 00 00 00 40 00 00 80 3f 00 00 80 3f 9a 99 99 3e 00 00 00 00 00 00 5c 43 00 00 28 42 00 00 b4 42 78 00 00 00 00 00 00 00 9a 99 19 3f 00 00 80 3e 00 00 00 00 04 00 00 00 00 00 80 3f 00 00 20 41 00 00 34 42 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 80 3f cd cc 4c 3f cd cc 8c 3f 00 00 80 3f 00 00 00 00 66";
             bool k = false;
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
@@ -442,8 +444,8 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region M82BLocation
-        public async Task ScanM82BLocation()
+        #region AllSniper Switch
+        public async Task ScanM24Switch()
         {
             string search = "";
 
@@ -460,7 +462,7 @@ namespace BR_PREMIUM_5._0.strings
 
             if (foundAddresses.Count() > 0)
             {
-                M82BAddress = foundAddresses.ToList();
+                M24Address = foundAddresses.ToList();
                 ShowMessageBox("Scan Success", "", "");
             }
             else
@@ -476,15 +478,15 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
 
-        public void EnableM82BLocation()
+        public void EnableM24Switch()
         {
             string replace = "";
 
-            if (M82BAddress.Count > 0)
+            if (M24Address.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in M82BAddress)
+                foreach (var address in M24Address)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
                     if (writeResult)
@@ -501,7 +503,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("M82B Location Enabled", "", "");
+                        ShowMessageBox("M24 Switch Enabled", "", "");
                     }
                 }
                 else
@@ -512,7 +514,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("M8L Error", "failed", "");
+                        ShowMessageBox("M24 Error", "failed", "");
                     }
                 }
             }
@@ -528,15 +530,15 @@ namespace BR_PREMIUM_5._0.strings
                 }
             }
         }
-        public void ResetM82BLocation()
+        public void ResetM24Switch()
         {
             string originalPattern = "";
 
-            if (M82BAddress.Count > 0)
+            if (M24Address.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in M82BAddress)
+                foreach (var address in M24Address)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
                     if (writeResult)
@@ -554,7 +556,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("M82B Location Disabled", "", "");
+                        ShowMessageBox("M24 Switch Disabled", "", "");
                     }
                 }
                 else
@@ -566,7 +568,147 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("M8L Error 101", "failed", "");
+                        ShowMessageBox("M24 Error 101", "failed", "");
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        public async Task ScanVSKSwitch()
+        {
+            string search = "";
+
+            if (Process.GetProcessesByName("HD-Player").Length == 0)
+            {
+                ShowMessageBox("Open Emulator", "failed", "");
+                return;
+            }
+
+            bruuuh.OpenProcess("HD-Player");
+            ShowMessageBox("Scanning...", "activating", "");
+
+            IEnumerable<long> foundAddresses = await bruuuh.AoBScan(search, writable: true);
+
+            if (foundAddresses.Count() > 0)
+            {
+                VSKAddress = foundAddresses.ToList();
+                ShowMessageBox("Scan Success", "", "");
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Scan Failed", "Memory pattern not found", "");
+                }
+            }
+        }
+
+        public void EnableVSKSwitch()
+        {
+            string replace = "";
+
+            if (VSKAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in VSKAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("VSK Switch Enabled", "", "");
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+                        ShowMessageBox("VSK Error", "failed", "");
+                    }
+                }
+            }
+            else
+            {
+                if (_mainForm.IsCheckboxChecked())
+                {
+
+                }
+                else
+                {
+                    ShowMessageBox("Please Load First !", "failed", "");
+                }
+            }
+        }
+        public void ResetVSKSwitch()
+        {
+            string originalPattern = "";
+
+            if (VSKAddress.Count > 0)
+            {
+                bool success = false;
+
+                foreach (var address in VSKAddress)
+                {
+                    bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
+                    if (writeResult)
+                    {
+                        success = true;
+                    }
+                }
+
+                if (success)
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("VSK Switch Disabled", "", "");
+                    }
+                }
+                else
+                {
+                    if (_mainForm.IsCheckboxChecked())
+                    {
+
+                    }
+                    else
+                    {
+
+                        ShowMessageBox("VSK Error 101", "failed", "");
                     }
                 }
             }
@@ -584,10 +726,10 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
         #endregion
-        #region SniperZoom
-        public async Task ScanSniperZoom()
+        #region SniperTracking
+        public async Task ScanSniperTracking()
         {
-            string search = "";
+            string search = "06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01 00";
 
             if (Process.GetProcessesByName("HD-Player").Length == 0)
             {
@@ -602,7 +744,7 @@ namespace BR_PREMIUM_5._0.strings
 
             if (foundAddresses.Count() > 0)
             {
-                sniperzoomAddress = foundAddresses.ToList();
+                sniperTrackingAddress = foundAddresses.ToList();
                 ShowMessageBox("Scan Success", "", "");
             }
             else
@@ -618,15 +760,15 @@ namespace BR_PREMIUM_5._0.strings
             }
         }
 
-        public void EnableSniperZoom()
+        public void EnableSniperTracking()
         {
-            string replace = "";
+            string replace = "06 00 00 00 00 00 FF FF 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 5c 01 00";
 
-            if (sniperzoomAddress.Count > 0)
+            if (sniperTrackingAddress.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in sniperzoomAddress)
+                foreach (var address in sniperTrackingAddress)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", replace);
                     if (writeResult)
@@ -643,7 +785,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("Sniper Zoom Enabled", "", "");
+                        ShowMessageBox("Sniper Tracking Enabled", "", "");
                     }
                 }
                 else
@@ -654,7 +796,7 @@ namespace BR_PREMIUM_5._0.strings
                     }
                     else
                     {
-                        ShowMessageBox("SZ Error", "failed", "");
+                        ShowMessageBox("ST Error", "failed", "");
                     }
                 }
             }
@@ -670,15 +812,15 @@ namespace BR_PREMIUM_5._0.strings
                 }
             }
         }
-        public void ResetSniperZoom()
+        public void ResetSniperTracking()
         {
-            string originalPattern = "";
+            string originalPattern = "06 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 41 00 00 48 42 00 00 00 3F 33 33 13 40 00 00 B0 3F 00 00 80 3F 01 00";
 
-            if (sniperzoomAddress.Count > 0)
+            if (sniperTrackingAddress.Count > 0)
             {
                 bool success = false;
 
-                foreach (var address in sniperzoomAddress)
+                foreach (var address in sniperTrackingAddress)
                 {
                     bool writeResult = bruuuh.WriteMemory(address.ToString("X"), "bytes", originalPattern);
                     if (writeResult)
@@ -696,7 +838,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("Sniper Zoom Disabled", "", "");
+                        ShowMessageBox("Sniper Tracking Disabled", "", "");
                     }
                 }
                 else
@@ -708,7 +850,7 @@ namespace BR_PREMIUM_5._0.strings
                     else
                     {
 
-                        ShowMessageBox("SZ Error 101", "failed", "");
+                        ShowMessageBox("ST Error 101", "failed", "");
                     }
                 }
             }

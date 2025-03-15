@@ -10,9 +10,9 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedMem
+namespace Memory
 {
-    #region RedMem
+    #region Memory
     public class MemRed
 	{
 		[DllImport("kernel32.dll")]
@@ -52,7 +52,7 @@ namespace RedMem
 			return stringBuilder.ToString();
 		}
 
-        public byte[] AhReadMeFucker(string code, long length, string file = "")
+        public byte[] ReadMemory(string code, long length, string file = "")
         {
             byte[] array = new byte[length];
             UIntPtr code2 = this.GetCode(code, file, 8);

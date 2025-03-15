@@ -17,10 +17,11 @@ using CheatHubMem;
 using DiscordRPC;
 using Guna.UI2.WinForms;
 using Microsoft.Win32;
-using RedMem;
+using Memory;
 using TheArtOfDevHtmlRenderer.Adapters;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Gma.System.MouseKeyHook;
 
 namespace BR_PREMIUM_5._0
 {
@@ -48,6 +49,7 @@ namespace BR_PREMIUM_5._0
         private Aimbots aimbots;
         private Miscs miscs;
         private Bypass bypass;
+        private AimLegit legitclass;
         //private Aimbots aimbotss = new Aimbots();
 
         bool cameraRight = false;
@@ -61,7 +63,7 @@ namespace BR_PREMIUM_5._0
                 Dock = DockStyle.Bottom 
             };
             this.Controls.Add(_messageBox);
-            systemInfoHelper = new SystemInfoHelper(fps, pcname, hwid, ip, ram, cpu, rambar, cpubar);
+            systemInfoHelper = new SystemInfoHelper(pcname, hwid, ip, ram, cpu, rambar, cpubar);
             systemInfoHelper.Start();
             this.KeyPreview = true;
             this.KeyDown += HOME_KeyDown;
@@ -73,6 +75,7 @@ namespace BR_PREMIUM_5._0
             aimbots = new Aimbots(this);
             miscs = new Miscs(this);
             bypass = new Bypass(this);
+            legitclass = new AimLegit(this);
 
         }
         #region Particles
@@ -117,6 +120,51 @@ namespace BR_PREMIUM_5._0
             Control = 2,
             Shift = 4,
             Windows = 8
+        }
+        private void RegisterHotKeyForButton(Guna2Button button, Keys key, bool control, bool alt, bool shift)
+        {
+            int id = _nextHotkeyId++;
+            button.Tag = id;
+
+            uint modifiers = (control ? (uint)KeyModifiers.Control : 0) |
+                             (alt ? (uint)KeyModifiers.Alt : 0) |
+                             (shift ? (uint)KeyModifiers.Shift : 0);
+
+
+            if (key >= Keys.A && key <= Keys.Z || key >= Keys.D0 && key <= Keys.D9 || (key >= Keys.F1 && key <= Keys.F12))
+            {
+                if (RegisterHotKey(this.Handle, id, modifiers, (uint)key))
+                {
+                    _hotkeys[id] = new HotkeyInfo(button, key, modifiers);
+                    button.Text = $"{key}";
+                }
+                else
+                {
+                    //if (disablenot.Checked == false)
+                    //{
+                    //    ShowMessageBox("Failed To Register", "failed", "Failed");
+
+                    //}
+                }
+            }
+            else
+            {
+                //if (disablenot.Checked == false)
+                //{
+                //    ShowMessageBox("Invalid Key", "failed", "failed");
+                //}
+            }
+        }
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_HOTKEY)
+            {
+                int id = m.WParam.ToInt32();
+                if (_hotkeys.TryGetValue(id, out var hotkeyInfo))
+                {
+                    PerformActionForButton(hotkeyInfo.Button);
+                }
+            }
         }
         private void capture1()
         {
@@ -178,6 +226,11 @@ namespace BR_PREMIUM_5._0
             WallKey.Text = "?";
             this.KeyDown += Form1_KeyDownButton12;
         }
+        private void capture13()
+        {
+            ghostkey.Text = "?";
+            this.KeyDown += Form1_KeyDownButton13;
+        }
 
         private void Form1_KeyDownButton1(object sender, KeyEventArgs e)
         {
@@ -238,6 +291,12 @@ namespace BR_PREMIUM_5._0
         {
             RegisterHotKeyForButton(WallKey, e.KeyCode, e.Control, e.Alt, e.Shift);
             this.KeyDown -= Form1_KeyDownButton12;
+        
+        }
+        private void Form1_KeyDownButton13(object sender, KeyEventArgs e)
+        {
+            RegisterHotKeyForButton(ghostkey, e.KeyCode, e.Control, e.Alt, e.Shift);
+            this.KeyDown -= Form1_KeyDownButton13;
         }
 
         //private void Form1_KeyDownButton2(object sender, KeyEventArgs e)
@@ -245,64 +304,16 @@ namespace BR_PREMIUM_5._0
         //    RegisterHotKeyForButton(redlinekey, e.KeyCode, e.Control, e.Alt, e.Shift);
         //    this.KeyDown -= Form1_KeyDownButton2;
         //}
-        private void RegisterHotKeyForButton(Guna2Button button, Keys key, bool control, bool alt, bool shift)
-        {
-            int id = _nextHotkeyId++;
-            button.Tag = id;
-
-            uint modifiers = (control ? (uint)KeyModifiers.Control : 0) |
-                             (alt ? (uint)KeyModifiers.Alt : 0) |
-                             (shift ? (uint)KeyModifiers.Shift : 0);
-
-
-            if (key >= Keys.A && key <= Keys.Z || key >= Keys.D0 && key <= Keys.D9 || (key >= Keys.F1 && key <= Keys.F12))
-            {
-                if (RegisterHotKey(this.Handle, id, modifiers, (uint)key))
-                {
-                    _hotkeys[id] = new HotkeyInfo(button, key, modifiers);
-                    button.Text = $"{key}";
-                }
-                else
-                {
-                    if (disablenot.Checked == false)
-                    {
-                        ShowMessageBox("Failed To Register", "failed", "Failed");
-
-                    }
-                    //MessageBox.Show($"Failed to register hotkey: {key}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                if (disablenot.Checked == false)
-                {
-                    ShowMessageBox("Invalid Key", "failed", "failed");
-                }
-                //MessageBox.Show($"Invalid key for hotkey: {key}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == WM_HOTKEY)
-            {
-                int id = m.WParam.ToInt32();
-                if (_hotkeys.TryGetValue(id, out var hotkeyInfo))
-                {
-                    PerformActionForButton(hotkeyInfo.Button);
-                }
-            }
-            base.WndProc(ref m);
-        }
+       
         private void PerformActionForButton(Guna2Button button)
         {
             if (button == aimheadkey)
             {
-                aimbots.EnableAimbotSecurity();
+                aimbots.EnableAimbotDrag();
             }
             else if (button == aimheadv2key)
             {
-                aimbots.LoadAimbotHeadV1();
-                aimbots.LoadAimbotExtra();
+                aimbots.EnableAimbotHeadV2();
             }
 
 
@@ -360,21 +371,46 @@ namespace BR_PREMIUM_5._0
             }
             else if (button == speedKey)
             {
-                speedhackmain();
+                if(miscs.Speed == false)
+                {
+                    miscs.EnablSpeed();
+                }
+                else
+                {
+                    miscs.ResetSpeed();
+                }
             }
             else if (button == WallKey)
             {
-                wallhackmain();
+                if (miscs.Wall == false)
+                {
+                    miscs.EnablWall();
+                }
+                else
+                {
+                    miscs.ResetWall();
+                }
             }
             else if (button == camerakey)
             {
                 if(cameraRight == false)
                 {
-                    miscs.EnableCameraRight();
+                    miscs.EnableCameraLeft();
                 }
                 else
                 {
-                    miscs.ResetCameraRight();
+                    miscs.ResetCameraLeft();
+                }
+            }
+            else if (button == ghostkey)
+            {
+                if(miscs.Glitch == false)
+                {
+                    miscs.EnableGhostHack();
+                }
+                else
+                {
+                    miscs.ReseGhostHack();
                 }
             }
 
@@ -528,12 +564,15 @@ namespace BR_PREMIUM_5._0
             DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return unixStart.AddSeconds(unixTime).ToLocalTime();
         }
+        private IKeyboardMouseEvents _globalHook;
+        private bool _systemOn = false;
+        private bool _hookActive = false;
         private void HOME_Load(object sender, EventArgs e)
         {
             rambar.Update();
             homenav.PerformClick();
             LoadSettings();
-            //rpc.Checked = true;
+            rpc.Checked = true;
             RichStatus.rpctimestamp = Timestamps.Now;
             RichStatus.InitializeRPC();
             if (LOGIN.KeyAuthApp.user_data != null)
@@ -552,8 +591,33 @@ namespace BR_PREMIUM_5._0
             {
                 ShowMessageBox("Logged In !", "sucess", "");
             }
+            _globalHook = Hook.GlobalEvents();
+            _globalHook.MouseDown += GlobalHook_MouseDown;
         }
+        private void GlobalHook_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (_hookActive)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    _systemOn = true;
+                    //UpdateStatusLabel();
+                    legitclass.Aimboton();
+                }
 
+                if (e.Button == MouseButtons.Left)
+                {
+                    _systemOn = false;
+                    //UpdateStatusLabel();
+                    legitclass.Aimbotoff();
+
+                }
+            }
+        }
+        private void UpdateStatusLabel()
+        {
+            
+        }
         private void aimbotnav_Click(object sender, EventArgs e)
         {
             aimbotspanel.BringToFront();
@@ -676,13 +740,26 @@ namespace BR_PREMIUM_5._0
 
         private void guna2CustomCheckBox2_Click(object sender, EventArgs e)
         {
-            if (camera.Checked)
+            if (aimdrag.Checked)
             {
-                aimbots.EnableAimbotDrag();
+                //aimbots.EnableAimbotDrag();
+                if (_hookActive)
+                {
+                    _globalHook.MouseDown -= GlobalHook_MouseDown;
+                    _hookActive = false;
+                    ShowMessageBox("Aimbot Legit Disabled", "", "");
+                    legitclass.Aimboton();
+                }
+                else
+                {
+                    _globalHook.MouseDown += GlobalHook_MouseDown;
+                    _hookActive = true;
+                    ShowMessageBox("Aimbot Legit Enabled", "", "");
+                }
             }
             else
             {
-                aimbots.DisableAimbotDrag();
+                //aimbots.DisableAimbotDrag();
             }
         }
 
@@ -694,8 +771,14 @@ namespace BR_PREMIUM_5._0
         {
             if (aimexv2.Checked)
             {
-                aimbots.EnableAimbotHeadV1();
-                aimbots.EnableAimbotHeadExtra();
+                aimbots.EnableAimbotHeadV2();
+            }
+
+            else
+            {
+                //aimbots.DisableAimbotHeadV2();
+
+
             }
         }
         private void visualsnav_Click(object sender, EventArgs e)
@@ -921,7 +1004,6 @@ namespace BR_PREMIUM_5._0
         {
             string filePath = Path.Combine(Application.StartupPath, settingsFileName);
 
-            // First, try to load from the .dat file
             if (File.Exists(filePath))
             {
                 try
@@ -961,6 +1043,7 @@ namespace BR_PREMIUM_5._0
                     mutebeep.Checked = Convert.ToBoolean(regKey.GetValue("Mute Beep", false));
                     taskbar.Checked = Convert.ToBoolean(regKey.GetValue("Taskbar", false));
                     rpc.Checked = Convert.ToBoolean(regKey.GetValue("Discord Rpc", false));
+                    particlesonoff.Checked = Convert.ToBoolean(regKey.GetValue("Particles", true));
                     proccessmode.SelectedIndex = Convert.ToInt32(regKey.GetValue("Proccess Mode", -1));
                     regKey.Close();
                     return true;
@@ -980,6 +1063,7 @@ namespace BR_PREMIUM_5._0
             mutebeep.Checked = false;
             taskbar.Checked = false;
             rpc.Checked = false;
+            particlesonoff.Checked = true;
             //proccessmode.SelectedIndex = -1;
         }
         private void SaveSettings()
@@ -995,6 +1079,10 @@ namespace BR_PREMIUM_5._0
                     mutebeep.Checked.ToString(),
                     taskbar.Checked.ToString(),
                     rpc.Checked.ToString(),
+                    particlesonoff.Checked.ToString(),
+                    panelicon.Checked.ToString(),
+                    internet.Checked.ToString(),
+                    disablefps.Checked.ToString(),
                     proccessmode.SelectedIndex.ToString()
                 };
 
@@ -1016,6 +1104,7 @@ namespace BR_PREMIUM_5._0
                 regKey.SetValue("Mute Beep", mutebeep.Checked);
                 regKey.SetValue("Taskbar", taskbar.Checked);
                 regKey.SetValue("Discord Rpc", rpc.Checked);
+                regKey.SetValue("Particles", particlesonoff.Checked);
                 regKey.SetValue("Proccess Mode", proccessmode.SelectedIndex);
                 regKey.Close();
             }
@@ -1199,15 +1288,14 @@ namespace BR_PREMIUM_5._0
         {
             if (aimbotexternal.Checked)
             {
-                aimbots.AimbotOn();
+                //aimbots.EnableAimbotHead();
+                aimbots.EnableAimbotDrag();
             }
 
             else
             {
-                //aimbots.DisableAimbotHeadV1();
-                aimbots.AimbotOff();
-                
-
+                //aimbots.DisableAimbotHead();
+                aimbots.DisableAimbotDrag();
             }
         }
 
@@ -1264,7 +1352,8 @@ namespace BR_PREMIUM_5._0
         public static String PID;
         private async void aimheadload_Click(object sender, EventArgs e)
         {
-            aimbots.EnableAimbotSecurity();
+            //aimbots.LoadAimbotHead();
+            aimbots.LoadAimbotDrag();
         }
 
         private void sniperpan_Paint(object sender, PaintEventArgs e)
@@ -1284,9 +1373,7 @@ namespace BR_PREMIUM_5._0
 
         private async void aimheadv2load_Click(object sender, EventArgs e)
         {
-            //aimbots.LoadAimbot();
-            aimbots.LoadAimbotHeadV1();
-            aimbots.LoadAimbotExtra();
+            aimbots.LoadAimbotHeadV2();
         }
 
         private async void aimdragload_Click(object sender, EventArgs e)
@@ -1381,11 +1468,11 @@ namespace BR_PREMIUM_5._0
         {
             if (speedhack.Checked)
             {
-                speedhackmain();
+                miscs.EnablSpeed();
             }
             else
             {
-                speedhackmain();
+                miscs.ResetSpeed();
             }
         }
 
@@ -1442,18 +1529,21 @@ namespace BR_PREMIUM_5._0
 
         private void M82Blocationload_Click(object sender, EventArgs e)
         {
-            sniper.ScanM82BLocation();
+            sniper.ScanM24Switch();
+            sniper.ScanVSKSwitch();
         }
 
         private void M82Blocation_Click(object sender, EventArgs e)
         {
             if (M82Blocation.Checked)
             {
-                sniper.EnableM82BLocation();
+                sniper.EnableM24Switch();
+                sniper.EnableVSKSwitch();
             }
             else
             {
-                sniper.ResetM82BLocation();
+                sniper.ResetM24Switch();
+                sniper.ResetVSKSwitch();
             }
         }
 
@@ -1581,18 +1671,18 @@ namespace BR_PREMIUM_5._0
 
         private void loadsniperzoom_Click(object sender, EventArgs e)
         {
-            sniper.ScanSniperZoom();
+            sniper.ScanSniperTracking();
         }
 
         private void sniperzoom_Click(object sender, EventArgs e)
         {
             if (sniperzoom.Checked)
             {
-                sniper.EnableSniperZoom();
+                sniper.EnableSniperTracking();
             }
             else
             {
-                sniper.ResetSniperZoom();
+                sniper.ResetSniperTracking();
             }
         }
 
@@ -1637,18 +1727,18 @@ namespace BR_PREMIUM_5._0
 
         private void loadglitch_Click(object sender, EventArgs e)
         {
-            miscs.ScanGlitchFire();
+            miscs.ScanGhostHack();
         }
 
         private void guna2CustomCheckBox3_Click(object sender, EventArgs e)
         {
             if (glitch.Checked)
             {
-                miscs.EnableGlitchFire();
+                miscs.EnableGhostHack();
             }
             else
             {
-                miscs.ResetGlitchFire();
+                miscs.ReseGhostHack();
             }
         }
 
@@ -1664,11 +1754,11 @@ namespace BR_PREMIUM_5._0
         {
             if (camera.Checked)
             {
-                miscs.EnableCameraRight();
+                miscs.EnableCameraUp();
             }
             else
             {
-                miscs.ResetCameraRight();
+                miscs.DisableCameraUp();
             }
         }
 
@@ -1686,12 +1776,12 @@ namespace BR_PREMIUM_5._0
 
         private void loadcamera_Click(object sender, EventArgs e)
         {
-            miscs.ScanCameraRight();
+            //miscs.ScanCameraUp();
         }
 
         private void camerakey_Click(object sender, EventArgs e)
         {
-
+            capture10();
         }
 
         private void loadwall_Click(object sender, EventArgs e)
@@ -1703,14 +1793,17 @@ namespace BR_PREMIUM_5._0
         {
             if (wallhack.Checked)
             {
-                wallhackmain();
-
+                miscs.EnablWall();
+            }
+            else
+            {
+                miscs.ResetWall();
             }
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            capture13();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -1721,6 +1814,43 @@ namespace BR_PREMIUM_5._0
                 ShowMessageBox("All Keys is Cleared", "sucess", "");
             }
             ClearAllKeysMisc();
+        }
+
+        private void loginLogotext_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HOME_Paint(object sender, PaintEventArgs e)
+        {
+            Color borderColor = Color.Yellow;
+            int borderThickness = 3;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen, 0, 0, this.Width - 1, this.Height - 1);
+            }
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HOME_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _globalHook.MouseDown -= GlobalHook_MouseDown;
+            _globalHook.Dispose();
+        }
+
+        private void speedKey_Click(object sender, EventArgs e)
+        {
+            capture11();
+        }
+
+        private void WallKey_Click(object sender, EventArgs e)
+        {
+            capture12();
         }
     }
 }
